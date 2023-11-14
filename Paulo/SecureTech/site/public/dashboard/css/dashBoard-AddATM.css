@@ -1,0 +1,103 @@
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    height: 85vh;
+    width: 77vw;
+}
+
+.boxAddATM{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    /* background-color: aqua; */
+}
+.plano_fundo{
+    display: flex;
+    
+}
+
+.conteudoAddATM{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+
+    border-radius: 2rem;
+
+    height: 90%;
+    width: 55%;
+
+    background-color: #021e46;
+}
+
+.addATM{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 5vh;
+    width: 70%;
+
+    /* background-color: red; */
+}
+
+.addATMTexto{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+    width: 40%;
+
+
+    /* background-color: blue; */
+}
+
+.addATMTexto span{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.addATMInput{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 60%;
+
+
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.addATMInput input{
+    width: 95%;
+	appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .1em solid #000000;
+	background: rgba(#E91E63, .2);
+	border-radius: .2em .2em 0 0;
+	padding: .4em;
+	color: #000000;
+}
+
+.button {
+    background-color: #FFCB45;
+    color: #021e46;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Efeito de hover */
+  .button:hover {
+    background-color: #253853; /* Altera o background para branco no hover */
+    color: #fff; /* Altera a cor do texto para a cor original no hover */
+    transition: 2s;
+}

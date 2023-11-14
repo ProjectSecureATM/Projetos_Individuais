@@ -1,0 +1,212 @@
+.div_lateral{
+    width: 20%;
+    height: 100vh;
+    background: #295897;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.div_usuario{
+    width: 80%;
+    height: 25vh;
+    background: #295897;
+    border-radius: 17px;
+    border-left: 4px rgba(0, 0, 0, 0.30) solid;
+    border-bottom: 3px rgba(0, 0, 0, 0.30) solid;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    flex-direction: column;
+}
+.div_circulo{
+    width: 15vh; 
+    height: 15vh; 
+    background: #FFCB45; 
+    border-radius: 9999px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div_localizaAgencia{
+    width: 80%; 
+    height: 10vh; 
+    background: #295897; 
+    border-radius: 5px; 
+    border-left: 2px rgba(0, 0, 0, 0.30) solid; 
+    border-bottom: 2px rgba(0, 0, 0, 0.30) solid;
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.select_caixa{
+    margin-top: 10%;
+}
+.container_botoes{
+    width: 100%; 
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: end;
+    padding: 10%;
+}
+.rodape_lateral{
+    width: 25%; 
+    height: 7vh; 
+    background: #194075; 
+    border-radius: 3px;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+.espaço{
+    height: 2vh;
+}
+.icone_usuario{
+    width: 80%;
+    height: 80%;
+    margin-bottom: 10%;
+}
+.textos{
+    color: aliceblue;
+}
+*{
+    font-weight: lighter;
+    font-family: 'Readex Pro', sans-serif;
+}
+.background{
+    width: 100%; 
+    height: 100%; 
+    background: #E9E9E9;
+    display: flex;
+}
+.container_quadrados{
+    display: flex;
+    flex-direction: row;
+    width: 200%;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+.div_cpu{
+    width: 20%; 
+    height: 20vh; 
+    background: #194075; 
+    border-radius: 7px; 
+    border-left: 3px rgba(0, 0, 0, 0.30) solid; 
+    border-bottom: 2px rgba(0, 0, 0, 0.30) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.texto_cpu{
+    font-weight: bolder;
+    font-size: 350%;
+    color: aliceblue;
+    margin-bottom: 10%;
+    margin-top: -1%;
+}
+.identificador_cpu{
+    font-weight: bolder;
+    font-size: 100%;
+    color: aliceblue;
+}
+.titulo_dash{
+    font-weight: bolder;
+    font-size: x-large;
+}
+.div_ram{
+    width: 20%; 
+    height: 20vh; 
+    background: #ffffff; 
+    border-radius: 7px; 
+    border-left: 3px rgba(0, 0, 0, 0.30) solid; 
+    border-bottom: 2px rgba(0, 0, 0, 0.30) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.texto_ram{
+    font-weight: bolder;
+    font-size: 350%;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10%;
+    margin-top: -1%;
+}
+.identificador_ram{
+    font-weight: bolder;
+    font-size: 90%;
+    color: rgb(0, 0, 0);
+}
+.container_dash{
+    display: flex;
+    width: 45%;
+    height: 80vh;
+    /* background-color: #FFCB45; */
+    margin-top: 11%;
+    margin-left: -22%;
+    margin-right: 5%;
+    flex-direction: column ;
+    justify-content: space-evenly;
+}
+.dash1{
+    height: 30vh;
+    width: 100%;
+    background-color: #d9d9d9;
+}
+.dash2{
+    height: 30vh;
+    width: 100%;
+    background-color: #d9d9d9;
+}
+.container_dash_lateral{
+    height: 90vh;
+    width: 25%;
+    background: white; 
+    border-radius: 17px;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.dash_disco1{
+height: 30%;
+width: 80%;
+/* background-color: #6c7bf2; */
+margin-left: 10%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.dash_disco2{
+    height: 30%;
+    width: 80%;
+    /* background-color:  rgb(170, 44, 221); */
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dash_disco3{
+    height: 30%;
+    width: 80%;
+    /* background-color:rgb(249, 100, 249); */
+    margin-left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chart-canvas{
+    height: 100%;
+    width: 100%; 
+    display: block; 
+    box-sizing: border-box; 
+    height: 100%; 
+    width: 100%;
+}
+    /* background-color: #FFCB45; */

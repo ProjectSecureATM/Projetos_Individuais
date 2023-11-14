@@ -1,0 +1,967 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.principal {
+    height: fit-content;
+    width: 100%;
+    /* background-color: #021e46; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 92%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    flex-direction: column;
+
+}
+
+.nav-bar {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    /* background-color: #ffffff; */
+}
+
+.logo img {
+    height: 15vh;
+    width: 13vw;
+}
+
+.div_menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 70%;
+    height: 100%;
+    align-self: baseline;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3.0vh;
+    font-weight: 700;
+    color: rgb(42, 42, 42);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#menu span {
+    border-bottom: solid 0.6vh #FFCB45;
+}
+
+#menu ul li {
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.menu li {
+    margin-right: 30px;
+}
+
+.menu a {
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #194075, #f7b102);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+}
+
+.menu[data-animation="bonus"] a::before {
+    transform-origin: right;
+}
+
+.menu[data-animation="bonus"] a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+.botao-login img {
+    height: 3vh;
+    width: 1.5vw;
+    margin-right: 12%;
+}
+
+#login-home {
+    width: 9vw;
+    height: 6vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+#login-home:hover {
+    font-weight: bold;
+    background-color: #d2a83e;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.banner-home {
+    width: 100%;
+    margin-top: 1%;
+    height: 75vh;
+    background-color: #FFCB45;
+    border-radius: 3vh;
+    border-bottom-right-radius: 40vh;
+    background: url('../assets/img-home.jpeg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 11px 31px 16px rgba(51, 51, 51, 0.181);
+    justify-content: center;
+}
+
+
+.div-titulo {
+    width: 90%;
+    height: inherit;
+    align-items: baseline;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 45%;
+    color: white;
+    height: 42vh;
+    font-size: 4.0vh;
+    flex-direction: column;
+
+}
+
+.text-titulo h1 {
+    margin-bottom: -3vh;
+    font-size: 56px;
+}
+
+.text-titulo span {
+    color: #FFCB45;
+    font-size: 56px;
+}
+
+.text-titulo p {
+    font-size: 3.4vh;
+}
+
+.nossos-servicos {
+    display: flex;
+    width: 100%;
+    height: 80vh;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Readex Pro', sans-serif;
+    font-weight: 700;
+}
+
+.title-nossos-servicos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    margin-bottom: 2%;
+}
+
+.title-nossos-servicos h1 {
+    font-size: 5vh;
+    color: #4A4A4A;
+}
+
+.title-nossos-servicos p {
+    color: #021e46
+}
+
+.cards-home {
+    display: flex;
+    height: 60vh;
+    width: 95%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.card-home {
+    display: flex;
+    flex-direction: column;
+    height: 53vh;
+    width: calc(31.00%);
+    background-color: #021e46;
+    box-shadow: 2px 11px 31px 16px rgba(51, 51, 51, 0.267);
+    border-radius: 3vh;
+    align-items: center;
+    justify-content: center;
+    transition: 1s ease-in-out;
+}
+
+.card-home:hover {
+    transform: scale(1.05);
+}
+
+.container-card {
+    width: 85%;
+    height: 40vh;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    text-align: start;
+    flex-direction: column;
+    color: white;
+}
+
+.conteudo-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-card img {
+    height: 9vh;
+    width: auto;
+}
+
+.container-card p {
+    font-family: 'Abel', sans-serif;
+    font-weight: lighter;
+    line-height: 200%
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap');
+
+.container-card h2 {
+    color: #FFCB45;
+    font-size: 3.5vh;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif;
+}
+
+.barrinha {
+    width: 30%;
+    height: 0.5vh;
+    background-color: #FFCB45;
+    align-self: flex-end;
+}
+
+.about-us {
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.img-about-us {
+    height: 76vh;
+    width: 45%;
+    background-image: url('../assets/midia-banco24horas-farmacia-2.jpg');
+    background-size: cover;
+    border-radius: 2vh;
+}
+
+.text-about-us {
+    height: 69vh;
+    width: 53%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Nunito', sans-serif;
+    color: #595959;
+    letter-spacing: 1px;
+    line-height: 1.7em;
+    font-size: 3vh;
+    font-style: normal;
+
+}
+
+.text-about-us p {
+    font-family: 'Nunito', sans-serif;
+    text-align: justify;
+
+    /* padding: 3vh; */
+}
+
+.text-about-us h2 {
+    font-size: 4.5vh;
+}
+
+.text-about-us #yellow {
+    color: #FFCB45;
+}
+
+.text-about-us button {
+    width: 12vw;
+    height: 7vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: normal;
+    align-self: baseline;
+    font-family: Nunito, sans-serif;
+    font-size: 3vh;
+    transition: 0.5s ease-in-out;
+}
+
+.text-about-us button:hover {
+    color: white;
+    background-color: #d2a83e;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.divBoxSobreNos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 140vh;
+    width: 100%;
+
+    /* background-color: red; */
+}
+
+.divTituloSobreNos {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+
+    /* background-color: green; */
+}
+
+.divTituloSobreNos span {
+    font-size: 42px;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.divSubTituloSobreNos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.divSubTituloSobreNos span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+
+.divSobreNos {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    width: 100%;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+
+
+    background-color: #021e46;
+}
+
+.divSobreNosEsquerdo {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    width: 100%;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+
+
+    background-color: #021e46;
+}
+
+.divConteudoSobreNos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+
+    justify-content: center;
+
+    /* background-color: rgb(0, 0, 0); */
+}
+
+
+.divConteudoTextoSobreNos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+
+    /* background-color: green; */
+}
+
+.textoSobreNos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70%;
+    width: 90%;
+}
+
+.divConteudoTextoSobreNos #subTitulo {
+    font-size: 26px;
+    color: #FFCB45;
+    font-weight: bold;
+}
+
+.divConteudoTextoSobreNos p {
+    font-size: 20px;
+    color: #ffffff;
+
+    text-align: justify;
+}
+
+.divConteudoImagemSobreNos {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    /* background-color: azure; */
+}
+
+
+.divImagemSobreNos {
+    width: 50%;
+    height: auto;
+
+}
+
+
+.divImagemSobreNos img {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div-card-monit {
+    height: 90vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-monit {
+    width: 85%;
+    height: 67%;
+    background-color: #021e46;
+    display: flex;
+    flex-direction: row;
+    border-radius: 32px;
+}
+
+.foto-card-monit {
+    width: 53%;
+    height: 100%;
+    background-image: url('../assets/pexels-liliana-drew-8555256.jpg');
+    background-size: cover;
+    position: relative;
+    border-bottom-right-radius: 32px;
+    border-top-right-radius: 32px;
+
+}
+
+.text-card-monit {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Abel', sans-serif;
+}
+
+.content-text {
+    width: 70%;
+    color: white;
+    height: 70%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.content-text button {
+    width: 15vw;
+    height: 7vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: normal;
+    align-self: baseline;
+    font-family: Nunito, sans-serif;
+    font-size: 3vh;
+    transition: 0.5s ease-in-out;
+}
+
+.content-text button:hover {
+    color: white;
+    background-color: #d2a83e;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.content-text p {
+    font-family: 'Abel', sans-serif;
+    font-size: 4vh;
+}
+
+.fale-conosco {
+    width: 110%;
+    height: 75vh;
+    background-image: url("../assets/Captura\ de\ tela\ 2023-08-18\ 110717.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-fale-conosco {
+    position: absolute;
+    background-color: #ffffff;
+    height: 60vh;
+    width: 40vw;
+    right: 100px;
+    box-shadow: 2px 11px 31px 16px rgba(51, 51, 51, 0.181);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-card-fc {
+    width: 80%;
+    font-size: 4vh;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: 'Nunito', sans-serif;
+    color: #4F4F4F;
+}
+
+.text-card-fc h1 {
+    font-size: 5vh;
+    font-family: 'Nunito', sans-serif;
+}
+
+.text-card-fc p {
+    font-size: 3vh;
+    color: #295897;
+}
+
+.text-card-fc button {
+    width: 17vw;
+    height: 6vh;
+    border-style: none;
+    background-color: #295897;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: normal;
+    align-self: center;
+    font-family: Nunito, sans-serif;
+    font-size: 3vh;
+    margin-top: 3%;
+    transition: 0.5s ease-in-out;
+}
+
+.text-card-fc button:hover {
+    transform: scale(1.05);
+    background-color: #194075;
+    cursor: pointer;
+}
+
+
+.icon-text img {
+    width: auto;
+    height: 7.5vh;
+    margin-right: 5%;
+    align-self: baseline;
+}
+
+.icon-text {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: baseline;
+}
+
+#aqui {
+    width: auto;
+    height: 5.5vh;
+}
+
+#margin {
+    margin-top: 5%;
+}
+
+.nossos-clientes {
+    width: 110%;
+    height: 25vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.clientes-grupo {
+    width: 90%;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 1s ease;
+}
+
+.clientesImg:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.clientes-grupo img {
+    width: auto;
+    height: 7vh;
+}
+
+#aqui2 {
+    width: auto;
+    height: 15vh;
+}
+
+.footer {
+    display: flex;
+    width: 120%;
+    height: 20rem;
+    background-color: #FFCB45;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 85%;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.footerContent {
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+
+.footerMedia {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.footerLogo {
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+
+.footerLogo img {
+    width: 17vw;
+    height: 20vh;
+}
+
+.footerSocialMidia {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 59%;
+    height: 30%;
+}
+
+.socialMedia {
+    width: 2.81rem;
+    height: 2.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    box-shadow: 0 3px 8px #514f4f;
+}
+
+.socialMedia i {
+    font-size: x-large;
+}
+
+.bgYellow {
+    background-color: #ffffff;
+}
+
+.bgWhite {
+    background-color: white;
+}
+
+.footerText {
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+
+.footerInfo {
+    display: flex;
+    flex-direction: column;
+    width: 33.3%;
+    height: 53%;
+    justify-content: right;
+}
+
+.linha {
+    border-bottom: 1px solid #000;
+}
+
+.footerInfo span,
+.footerInfo a {
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+.footerInfo a:hover,
+.footerInfo span:hover {
+    cursor: pointer;
+    font-weight: bold;
+    color: #021e46;
+}
+
+.footerRights {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 1%;
+}
+
+
+
+
+/* RESPONSIVIDADE */
+@media screen and (max-width: 1024px) {
+
+
+    .opt {
+        width: 60vw;
+    }
+
+    .logo img {
+        width: 24vw;
+        height: 10vh;
+        margin-top: -1vh;
+    }
+
+    .menu a {
+        font-size: 2vh;
+    }
+
+    #login-home {
+        width: 20vw;
+        height: 5vh;
+    }
+
+    #login-home img {
+        height: 3vh;
+        width: 4vw;
+        margin-right: 12%;
+    }
+
+    .text-titulo {
+        font-size: 3vh;
+        align-self: center;
+        text-align: start;
+        width: 80%;
+        height: 90vh;
+        justify-content: space-around;
+    }
+
+    .div-titulo {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .text-titulo h1 {
+        margin-bottom: -3vh;
+        width: 100%;
+    }
+
+    .text-titulo span {
+        color: #FFCB45;
+    }
+
+    .text-titulo p {
+        font-size: 3.7vh;
+    }
+
+
+    .clientes-grupo {
+        display: none;
+    }
+
+    .card-home {
+        width: 100%;
+        margin-bottom: 7%;
+    }
+
+    .title-nossos-servicos h1 {
+        text-align: center;
+        font-size: 3.5vh;
+    }
+
+    .container-card h2{
+        font-size: 30px;
+    }
+
+
+
+    .foto-card-monit {
+        display: none;
+    }
+
+    .text-card-monit {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    .content-text button {
+        width: 65%;
+        align-self: center;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .footer {
+        height: 25vh;
+    }
+
+    .footerLogo img {
+        width: fit-content;
+        height: 13vh;
+        position: relative;
+        right: 3rem;
+        bottom: 1rem;
+    }
+
+    .footerMedia {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footerSocialMidia {
+        display: flex;
+        position: relative;
+        top: 9vh;
+        left: 11vw;
+        gap: 2rem;
+        margin: 0;
+    }
+
+    .bgWhite {
+        padding: 1vh 2vw;
+    }
+
+    .bgYellow {
+        padding: 1vh 2.5vw;
+    }
+
+  
+}

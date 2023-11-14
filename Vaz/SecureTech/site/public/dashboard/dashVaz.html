@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+
+    <title>Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="vaz.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="css/vaz.css">
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <div class="sidebar-brand-icon" style="width: 35%; height: 14vh;">
+                    <img class="imgLogoDash" src="../assets/logo Securu ATM.png" alt="">
+                </div>
+                <div class="sidebar-brand-text"> Secure ATM</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 espacamento">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="DashBoard-VisaoGeral.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/binoculars.png" alt="">
+                    <span>Visão Geral</span>
+                </a>
+                <a class="nav-link" href="DashBoard.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/dashboard amarelo.png" alt="">
+                    <span style="color: goldenrod; font-weight: bold;">Dashboard</span>
+                </a>
+                <a class="nav-link" href="DashBoard-AddATM.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/add_ATM.png" alt="">
+                    <span>Cadastrar ATM</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Inovações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inovações Secure ATM:</h6>
+                        <a class="collapse-item" style="color: goldenrod;">Dash Gabroh</a>
+                        <a class="collapse-item">Dash Jujuba</a>
+                        <a class="collapse-item">Dash Julião</a>
+                        <a class="collapse-item">Dash Paulão</a>
+                        <a class="collapse-item">Dash Primon</a>
+                        <a class="collapse-item">Dash Alice</a>
+                    </div>
+                </div>
+
+                <div class="">
+
+                </div>
+
+            </li>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button class="buttonNavBar">
+                        <a href="../homeCadastrado.html">Voltar para Agencia</a>
+                    </button>
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow tex textoBruno">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2">Bruno</span>
+                                <img class="img-profile rounded-circle" src="../../assets/user.png">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="boxDashBoard">
+                    <div class="dashBoard">
+                        <div class="tituloDashBoard">
+                            <div class="titulo-DashBoard">
+                                <span>DashBoard</span>
+                            </div>
+                            <div class="divButon">
+                                <button class="butonDashBoard">
+                                    <span>Ver mais</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="divLinhaDash display-betwen">
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo">
+                                            <span>CPU</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span>30%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo">
+                                            <span>RAM</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span>30%</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo titulo-end">
+                                            <span>DISCO</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span>30%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divLinhaDash">
+
+
+                            <div class="divColunaDash display-evenly">
+                                <div class="boxTimer">
+                                    <div class="containerDashComponentes">
+                                        <div class="divTimer">
+                                            <div class="divTitulo">
+                                                <div class="titulo titulo-center">
+                                                    <span>Horas de Funcionamento</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="divTimer">
+                                                <div class="timer">
+                                                    <span> Selvagem</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="boxTimer">
+                                    <div class="containerDashComponentes">
+                                        <div class="divTimer">
+                                            <div class="divTitulo">
+                                                <div class="titulo">
+                                                    <span>Reinicio do Sistema</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="divTimer">
+                                                <div class="timer">
+                                                    <span>13</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="boxGrafico">
+                                <div class="grafico">
+                                    <div class="containerDashComponentes">
+                                        <div class="divTitulo">
+                                            <div class="titulo titulo-center">
+                                                <span>Variedades dos Componenetes Hoje</span>
+                                            </div>
+                                        </div>
+                                        <div class="divGrafico">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; programdor: Gabriel Vaz - SpTech 2023</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Certeza que você quer sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Sair" para deslogar.</div>
+                <div class="modal-footer">
+                    <button style="text-align: left;" class="btn btn-secondary" type="button"
+                        data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="../index.html">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pop up sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    function testeBotao() {
+        Swal.fire({
+            title: 'Métricas (KPI`s)</br></br><span style="color: blue;">CPU</span><p style="text-align: left;">Ideal: 0% a 50% </br> Aceitável: 50% a 70% </br> Crítico: 70% a 100%</p></br><span style="color: blue;">RAM</span><p style="text-align: left;">Ideal: 0% a 70% </br> Aceitável: 70% a 90% </br> Crítico: 90% a 100%</p></br><span style="color: blue;">DISCO</span><p style="text-align: left;">Ideal: 0% a 60% </br> Aceitável: 60% a 80% </br> Crítico: 80% a 100%</p>',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+    }
+
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00'],
+            datasets: [{
+                label: 'Quantidade de Processos',
+                data: [100, 50, 300, 75, 350, 200],
+                backgroundColor: [
+                    'rgb(2, 30, 70)'
+                ],
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>

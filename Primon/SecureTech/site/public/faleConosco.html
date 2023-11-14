@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureATM | Fale Conosco</title>
+
+    <script src="https://kit.fontawesome.com/4c5e041356.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/faleConosco.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
+    <link rel="stylesheet" href="css/chatBot.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&family=Readex+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="principal">
+        <div class="container">
+            <div class="nav-bar">
+                <div onclick="goToHome()" class="logo">
+                    <img src="./assets/secure_atm_logo.png" alt="">
+                </div>
+                <div class="div_menu">
+                    <ul class="menu" data-animation="bonus">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="faleConosco.html">Fale Conosco</a>
+                        </li>
+                        <li>
+                            <a href="solucao.html">Soluções</a>
+                        </li>
+                    </ul>
+                </div>
+                <div onclick="goToLogin()" class="botao-login">
+                    <button id="login-home"><img src="./assets/login-icon.png">Login</button>
+                </div>
+            </div>
+            <div class="banner"></div>
+        </div>
+
+        <div class="container-quad">
+
+            <div class="text">
+                <h1>Fale <span>Conosco</span></h1>
+                <p>Para dúvidas, sugestões ou reclamações entre em contato conosco através das informações abaixo!</p>
+            </div>
+
+            <div class="quadrado">
+                <div class="left">
+                    <div class="content-left">
+                        <div class="text-left">
+                            <div class="localizacao">
+                                <h1>Localização</h1>
+                                <p>
+                                    Rua Haddock Lobo, 595 - Cerqueira César 
+                                    São Paulo - SP, 
+                                    CEP: 01414-001
+                                </p>
+                            </div>
+                            <div class="contato">
+                                <h1>Outros Contatos</h1>
+                                <div class = "telefone">
+                                    <span>+55 (11) 0000-0000</span>
+                                </div>
+                                <div class="email">
+                                    <span>secure_atm@outlook.com</span>
+                                </div>
+                            </div>
+                            <div class="redes-sociais">
+                                <h1>Siga-nos</h1>
+                                <div class="footerSocialMidia">
+                                    <div class="socialMedia bgWhite"><i class="fa-brands fa-instagram"></i></div>
+                                    <div class="socialMedia bgYellow"><i class="fa-brands fa-facebook"></i></i></div>
+                                    <div class="socialMedia bgWhite"><i class="fa-brands fa-twitter"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="text-right">
+                        <p>
+                            Entre em contato com o nosso suporte através do <span>HelpDesk</span> e obtenha 
+                            um atendimento mais direcionado à sua solução!
+                        </p>
+                        <button onclick="suporte()">Acesse</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="chatbot-container">
+            <div id="chatbot-icon">Chat</div>
+            <div id="chatbot-body">
+                <div id="divOpcoes">
+                    <div id="perguntaBot">🤖 Bot: Olá! Como posso ajudar?</div>
+                    <div class="opcoes">
+                        <button onclick="opcao1()" id="margin" class="opt">1- Dúvidas frequentes</button>
+                        <button onclick="opcao2()" class="opt">2- Relatar problema</button>
+                        <button onclick="opcao3()" class="opt">3- Mudança de plano</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+<script src="js/ChatBot.js"></script>
+<script>
+
+    function goToLogin() {
+        window.location = 'login.html'
+    }
+
+    function goToSolucoes() {
+        window.location = 'solucao.html'
+    }
+
+    function goToSobreNos() {
+        window.location = 'sobre_nos.html'
+    }
+
+    function goToFaleConosco() {
+        window.location = 'faleConosco.html'
+    }
+
+    function goToHome() {
+        window.location = 'index.html'
+    }
+
+    function enviar() {
+        var email = "secure_ship@hotmail.com";
+        var assunto = `Olá, meu nome é ` + ipt_nome.value;
+        var corpo = ipt_mensagem.value;
+        window.open("mailto:" + email + "?subject=" + assunto + "&body=" + corpo);
+    }
+
+    function suporte() {
+        window.location = 'https://app.pipefy.com/public/form/KT7FTtAm'
+    }
+
+</script>

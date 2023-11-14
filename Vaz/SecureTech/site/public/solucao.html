@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureATM | Soluções </title>
+
+    <link rel="stylesheet" href="css/chatBot.css">
+    <link rel="stylesheet" href="css/chatBot.css">
+    <link rel="stylesheet" href="css/solucao.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&family=Readex+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./assets/fiveicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <header> <!-- principal -->
+        <div class="container">
+            <div class="navBar"> <!-- nav-bar -->
+                <img src="assets/secure_atm_logo.png" alt="Logo" onclick="goToHome()">
+                <div class="div_menu">
+                    <ul class="menu" data-animation="bonus">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="faleConosco.html">Fale Conosco</a>
+                        </li>
+                        <li>
+                            <a href="solucao.html">Soluções</a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="login-button" onclick="goToLogin()"><img src="assets/clarity_sign-in-line.png"
+                        alt="img-Login" class="logo">Login</button>
+            </div>
+            <div class="banner"> <!-- Banner Home -->
+                <div class="container">
+                    <div class="bd-img-banner">
+                    </div>
+                    <div class="titulo">
+                        <div class="text-titulo">
+                            <h1>Conheça a nossa solução de <b>monitoramento</b>.</h1>
+                            <p>Nossa solução visa trazer segurança fisica e digital para os ATM's, ou caixas
+                                eletrônicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- <div class="negocio">
+        <div class="img-negocio">
+            <img src="assets/ATM.png">
+        </div>
+        <div class="text-negocio">
+            <h2>Monitoramento de ATM's</h2>
+            <h3>Nosso foco é trazer a segurança de confiabilidade</h3>
+            <p>Nosso compromisso é mais do que palavras: é a base da nossa atuação. Entendemos que a estabilidade dessas
+                máquinas é vital para os negócios e a confiança dos usuários. Dessa forma, a SecureATM emprega um
+                esforço
+                contínuo para identificar potenciais problemas antes que afetem as operações, garantindo uma experiência
+                tranquila para todos os envolvidos.</p>
+        </div>
+    </div> -->
+
+    <div class="divBoxPlanos">
+        <br><br>
+        <div class="divTituloPlanos">
+            <span>
+                NOSSOS PLANOS
+            </span>
+        </div>
+        <br><br>
+        <div class="boxPlanos">
+            <div class="planos">
+                <div class="format-planos">
+                    <div class="divPlanoTitulo">
+                        <span>
+                            Standard
+                        </span>
+                    </div>
+                    <div class="divConteudoPlanos">
+                        <p>
+                            Ideal para organização que precisam de acesso rápido a recursos básicos.
+                        </p>
+                    </div>
+                    <div class="divPreco">
+                        <p>
+                            $$<span>/ Mês</span>
+                        </p>
+                        <div class="butonPreco">
+                            <button onclick="comecar()">
+                            Comece Agora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="divBoxCheck">
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de CPU
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de Disco
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de RAM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Errado.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de Processos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="planos plano2">
+                <div class="format-planos">
+                    <div class="divPlanoTitulo">
+                        <span>
+                            Advanced
+                        </span>
+                    </div>
+                    <div class="divConteudoPlanos">
+                        <p>
+                            Ideal para empresas que precisam de recursos e ferramentas avançadas para o trabalho do
+                            cliente
+                        </p>
+                    </div>
+                    <div class="divPreco">
+                        <p>
+                            $$$$<span>/ Mês</span>
+                        </p>
+
+                        <div class="butonPreco butonPreco2">
+                            <button onclick="comecar()">
+                            Comece Agora
+                            </button>
+                        </div>
+                    </div>
+                    <div class="divBoxCheck">
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de CPU
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de Disco
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de RAM
+                                </p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="divImgCheck">
+                                <img src="assets/Certinho.png" alt="">
+                            </div>
+                            <div class="ConteudoCheck">
+                                <p>
+                                    Monitoramento de Processos
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chatbot-container">
+        <div id="chatbot-icon">Chat</div>
+        <div id="chatbot-body">
+          <div id="divOpcoes">
+          <div id="perguntaBot">🤖 Bot: Olá! Como posso ajudar?</div>
+          <div class="opcoes">
+            <button onclick="opcao1()" id="margin" class="opt">1- Dúvidas frequentes</button>
+            <button onclick="opcao2()" class="opt">2- Relatar problema</button>
+            <button onclick="opcao3()" class="opt">3- Mudança de plano</button>
+          </div>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+        <div class="footer">
+            <div class="footerContainer">
+                <div class="footerContent">
+                    <div class="footerMedia">
+                        <div class="footerLogo">
+                            <img src="../public/assets/logo_oficial_rodape.png" width="auto" height="5vh" alt="">
+                        </div>
+                        <div class="footerSocialMidia">
+                            <div class="socialMedia bgWhite"><i class="fa-brands fa-instagram"><img
+                                        src="assets/Group.png" alt=""></i></div>
+                            <div class="socialMedia bgYellow"><i class="fa-brands fa-facebook"><img
+                                        src="assets/Vector.png" alt=""></i></i></div>
+                            <div class="socialMedia bgWhite"><i class="fa-brands fa-twitter"><img
+                                        src="assets/Group (1).png" alt=""></i></div>
+                        </div>
+                    </div>
+                    <div class="footerText">
+                        <div class="footerInfo" id="aqui3">
+                            <h3>Institucional</h3>
+                            <a href="solucao.html">Soluções</a>
+                        </div>
+                        <div class="footerInfo">
+                            <h3>Suporte</h3>
+                            <a href="faleConosco.html">Fale conosco</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footerRights">
+                    <span>© 2023 SecureATM. Todos os Diretos Reservados.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="js/ChatBot.js"></script>
+<script>
+    function goToLogin() {
+        window.location = 'login.html'
+    }
+
+    function comecar() {
+        window.location = 'faleConosco.html'
+    }
+
+</script>

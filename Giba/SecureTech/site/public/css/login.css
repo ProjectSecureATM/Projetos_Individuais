@@ -1,0 +1,361 @@
+* {
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+html, body{
+    overflow: hidden;
+}
+
+#login-home {
+    position: absolute;
+    top: 5vh; 
+    right: 5vh; 
+    cursor: pointer;
+    width: 9vw;
+    height: 6vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+#login-home img{
+    height: 5vh;
+    width: 2vw;
+    margin-right: 1vh;
+}
+
+.logo-celular{
+    display: none;
+    width: 30vh;
+}
+
+body {
+    background-image: url(../imgs/bg-overlay.png);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    width: 100%; 
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #295897;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.402);
+}
+
+#chatbot-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #FFCB45;
+    color: #000000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#chatbot-body {
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    padding: 10px;
+}
+
+#chatbot-body .opcoes{
+    /* height: 10vh; */
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.opt{
+    width: 100%;
+    /* background-color: #FFCB45; */
+    border: 1.5px solid #FFCB45;
+    height: 7vh;
+    margin-bottom: 3%;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.opt:hover{
+    background-color: #FFCB45;
+    color: black;
+    transform: scale(1.03);
+}
+
+#margin{
+    margin-top: 5%;
+}
+
+
+.card-login-info{
+    width: 50%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+.titulo-info {
+    color: white;
+    font-weight: bold;
+    font-size: 4vh; 
+    width: 100%;
+}
+
+input:focus{
+    border: 1px solid black;
+}
+
+input{
+    transition: 0.3s ease-in-out;
+}   
+
+.card-login-user{
+    position: relative;
+   top: 2%;
+    color: black;
+    width: 31vw;
+    height: 90vh;
+    background-color: #FAFAFA;
+    text-align: center;
+    border-radius: 2.3vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.texto-info{
+    color: white;
+}
+
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 64%;
+    justify-content: space-between;
+}
+
+.imagem-logo{
+    width: 17vw;
+    height: 20vh;
+}
+
+.titulo-user1{
+    margin-top: 5vh;
+    text-align: left;
+    font-size: 2vh;
+}
+
+.titulo-user2{
+    font-size: 3vh;
+    font-weight: 600;
+    text-align: left;
+}
+
+.texto-user{
+    text-align: left;
+}
+
+.texto-user2{
+    margin-bottom: 10%;
+}
+
+.info-user{
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-field{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+}
+
+.text-field input{
+    width: 100%;
+    height: 5vh;
+}
+
+
+.botao-amarelo {
+    background-color: #FFCB45; 
+    color: #ffffff; 
+    border: none; 
+    align-self: center;
+    font-size: 2vh; 
+    border-radius: 8px;
+    height: 8vh; 
+    cursor: pointer; 
+    color: black;
+    width: 77%;
+}
+
+.label-user{
+    
+    /* input */
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 3.78%;
+bottom: 76.98%;
+
+border: 1px solid #BDBDBD;
+border-radius: 8px;
+
+}
+
+.texto-user{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    width: 70%;
+  }
+
+  select {
+    width: 77%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    appearance: none; /* Remove a aparência padrão do elemento <select> */
+    cursor: pointer;
+  }
+
+ 
+  .card-redirecionador-user{
+    margin-bottom: 5%;
+  }
+  .a-user{
+    font-weight: 700;
+    color: black;
+  }
+
+  @media screen and (max-width: 1024px) {
+
+
+
+   html{
+    overflow-x: hidden;
+   } 
+
+   body{
+    flex-direction: column;
+    overflow-x: hidden;
+    height: fit-content;
+   }
+
+    #login-home img {
+        height: 3vh;
+        width: 4vw;
+        margin-right: 12%;
+    }
+
+    #login-home{
+        width: 25vw;
+    }
+
+    .opt{
+        width: 60vw;
+    }
+
+    .main{
+        flex-direction: column;
+        height: fit-content;
+        width: 90%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .imagem-logo{
+        display: block;
+        width: auto;
+        height: 15vh;
+    }
+
+    .main{
+        height: 100vh;
+    }
+
+    .titulo-user2 {
+        font-size: 2em; 
+    } 
+
+    .titulo-user1{
+        font-size: 2em; 
+    }
+
+    .texto-user{
+        font-size: 25px; 
+    }
+
+    .text-field input{
+        font-size: 20px; 
+    }
+    
+    .texto-user2{
+        font-size: 20px;
+    }
+   
+    
+    .card-login-user{
+        width: 90vw;
+        height: 65vh;
+    }
+
+    .card-login-info{
+        margin-top: 20vh;
+        margin-bottom: 50vh;
+        display: none;
+    }
+
+    #imgCard{
+        display: block;
+    }
+
+    
+}
+

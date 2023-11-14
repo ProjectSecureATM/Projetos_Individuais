@@ -1,0 +1,295 @@
+*{
+    margin: 0%;
+
+}
+
+body{
+    background-color: #021e46;
+}
+
+.container{
+    margin: 0%;
+    height: 100%;
+    width: 95%;
+}
+
+.navBar{
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    box-shadow: 0px 20px 15px -15px #000000;
+
+    background-color: #021e46;
+}
+
+.conteudoNavBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+.navBarLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 10%;
+}
+
+.navBarLogo img{
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.navBarTexto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+
+}
+
+.navBarTexto span{
+    color: white;
+    font-weight: bold;
+}
+
+.navBarUsuario{
+
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+
+}
+
+.navBarTextoUsuario{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: auto;
+
+
+}
+
+.navBarTextoUsuario p{
+    color: white;
+}
+
+.navBarTextoUsuario span{
+    color: #FFCB45;
+}
+
+.navBarImgUsario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+
+    background-color: rgb(218, 218, 92);
+}
+
+.navBarImgUsario img{
+    height: 80%;
+    width: 95%;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+.boxTituloDash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100%;
+}
+
+.tituloDash{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+    width: 100%;
+}
+
+.tituloDash span{
+    font-size: 36px;
+    color: #ffffff;
+    text-decoration: underline #FFCB45;
+
+}
+
+.boxDashBoard{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    /* background-color: pink; */
+}
+
+.divDashBoard{
+    display: flex;
+    flex-direction: row;
+
+    height: 100%;
+    width: 100%;
+}
+
+.dashBoard-Conjunto1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+}
+
+.boxDashBoard1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: auto;
+    width: 100%;
+
+    
+}
+
+.DashBoard1{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 23%;
+
+    border-radius: 5vh;
+
+    background-color: #ffffff;
+}
+
+.tituluDashBoard1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+
+}
+
+.tituluDashBoard1 span{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dadosDashBoard1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dadosDashBoard1 span{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.boxDashBoard2{
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    width: 100%;
+    
+}
+
+.divDashBoard2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.dashBoard2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 30vh;
+    width: 70%;
+
+    border-radius: 5vh;
+    background-color: white;
+}
+
+.tituluDashBoard2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+ 
+}
+
+.tituluDashBoard2 span{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.graficoDashBoard2{
+    display: flex;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+
+
+}
+
+.graficoDashBoard2 canvas #myChart{
+    display: flex;
+    justify-content: center;
+}
+
+.boxDashBoard3{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+    width: 20%;
+
+    background-color: aqua;
+}
+
+
+.dashBoard3{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    width: 90%;
+
+    border-radius: 5vh;
+
+    background-color: #ffffff;
+}
+
+.tituloDashBoard3{
+    display: flex;
+    align-items: center;
+    height: 20%;
+    width: 100%;
+}
+
+.tituloDashBoard3 span{
+    font-weight: bold;
+    font-size: 24px;
+}

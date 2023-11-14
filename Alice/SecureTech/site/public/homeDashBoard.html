@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureATM | Home do Usuário </title>
+  <script src="./js/sessao.js"></script>
+  <script src="./js/crudsAgenciaECadastro.js"></script>
+
+  <link rel="stylesheet" href="css/chatBot.css">
+  <link rel="stylesheet" href="css/homeCadastrado.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&family=Readex+Pro&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/fiveicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+  <header> <!-- principal -->
+    <div class="NavBar">
+      <div class="container-navBar">
+        <div class="divNavBar">
+          <div class="divImgNavBar">
+            <img src="assets/secure_atm_logo.png" alt="">
+          </div>
+          <div class="conteudoNavBar">
+            <div class="divTexto">
+              <span>
+                <a href="./dashboard/DashBoard-AddATM.html" id="spanPag">sfhgdtfjgnrf</a>
+              </span>
+              
+              <span>
+                <a href="homeDashBoard.html" id="spanPag">Agência</a>
+              </span>
+            </div>
+            <div class="divTexto">
+              <span>
+                <a href="homeDashBoardCadas.AG.html">Cadastrar Agência</a>
+              </span>
+            </div>
+
+            <div class="divTexto">
+              <span>
+                <a href="homeDashBoardCadas.Fun.html">Cadastrar Usuário</a>
+              </span>
+            </div>
+          </div>
+          <div onclick="limparSessao()" class="botao-login">
+            <button id="login-home" onclick="limparSessao()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="banner"> <!-- Banner Home -->
+        <div class="container">
+          <div class="bd-img-banner">
+          </div>
+          <div class="titulo">
+            <div class="text-titulo">
+              <h1>Bem-Vindo</h1>
+              <h1><span>Novamente!</span></h1>
+              <p>Essa tela é destinada a você,
+                <span id="id_nome_usuario"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Inicio Agências -->
+
+  <div class="boxDivTitulo">
+    <div class="containerConteudo">
+      <div class="divTitulo">
+        <span>
+          Essas são suas agências cadastradas
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divAgencia">
+    <div class="containerConteudo">
+
+      <div class="divTituloAgencia">
+        <a>São Paulo - SP</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</body>
+<!-- Fim Agências -->
+
+<!-- Inicio Rodapé -->
+<!-- Fim Rodapé -->
+<script>
+  function atualizarFeed() {
+var fkEmpresa = sessionStorage
+
+    fetch("/avisos/listar:fkEmpresa").then(function (resposta) {
+
+      if (resposta.ok) {
+        // if (resposta.status == 204) {
+        //     var feed = document.getElementById("feed_container");
+        //     var mensagem = document.createElement("span");
+        //     mensagem.innerHTML = "Nenhum resultado encontrado."
+        //     feed.appendChild(mensagem);
+        //     throw "Nenhum resultado encontrado!!";
+        // }
+        console.log("ENTREII")
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          for (let i = 0; i < resposta.length; i++) {
+
+            var publicacao = resposta[i];
+
+
+            divBoxCard.innerHTML += ` 
+
+          
+          <div class="buttonCard pointer" onclick="goToDashBoard()">
+            <!-- <div class="divFormatIMG">
+              <img src="assets/alerta Visao Geral.png" alt="">
+            </div> -->
+            <div class="divNome">
+              <span>${publicacao.nome}</span>
+
+            </div>
+            <div class="divNumero">
+              <span>${publicacao.nAgencia}</span>
+            </div>
+          </div>
+        `
+          }
+          // finalizarAguardar();
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+      // finalizarAguardar();
+    });
+  }
+
+  function goToDashBoard() {
+    window.location = "DashBoard-VisaoGeral.html"
+  }
+
+  function limparSessao() {
+    sessionStorage.clear();
+    window.location = "login.html";
+  }
+  var usuario = document.querySelector("#id_nome_usuario")
+  var nomeUsuario = sessionStorage.getItem("nome_usuario")
+  usuario.innerHTML = nomeUsuario
+
+  function addAgen() {
+    document.getElementById("AddAgencia").style.display = "nosne";
+  }
+</script>

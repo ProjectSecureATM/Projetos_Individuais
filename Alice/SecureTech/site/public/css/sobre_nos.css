@@ -1,0 +1,651 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.banner{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 33rem;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets/sobre_nos_banner.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    filter: brightness(90%);
+}
+
+.header{
+    display: flex;
+    width: 92%;
+    height: 8rem;
+}
+
+.containerHeader{
+    display: flex;
+    align-items: center;
+    width: 92%;
+    height: 98%;
+    margin: 2% 4% 0% 4%;
+}
+
+.containerFrase {
+    display: flex;
+    width: 100vw;
+    height: 30rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.frase{
+    display: flex;
+    font-size: 5rem;
+    margin-bottom: 5%;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.665);
+}
+
+.logo img{
+    width: 13vw;
+    height: 15vh;
+}
+
+
+
+.buttonLogin{
+    display: flex;
+    width: 45%;
+    height: 100%;
+    justify-content: end;
+    align-items: center;
+}
+
+.buttonLogin button{
+    width: 7.625rem;
+    height: 2.5rem;
+    border-radius: 5rem;
+    border-style: none;
+    background-color: #FFCB45;
+    font-weight: bold;
+}
+
+.buttonLogin button i{
+    padding-right: 4%;
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    background-color: white;
+}
+
+.containerSocial{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    margin: auto
+}
+
+.boxSocial{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.textArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-right: 4%;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.heading h2{
+    font-size: 5vh;
+}
+
+.coloredSpan{
+    color:#295897;
+    width: 100%;
+    font-size: 3.8vh;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.socialText{
+    display: flex;
+    width: 100%;
+}
+
+.socialText span{
+    font-size: 3.5vh;
+    width: 100%;
+    color: #595959;
+    font-weight: 100;
+}
+
+.imageArea{
+    display: flex;
+    width: 40%;
+    height: fit-content;
+    margin-top: 1%;
+}
+
+.imageArea img{
+    width: auto;
+    height: 50vh;
+    box-shadow: 0px 4px 52px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 1vh;
+}
+
+.fullTextArea{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.fullTextArea span{
+    font-size: 3.5vh;
+    width: 100%;
+    margin-top: 2%;
+    color: #595959;
+    font-weight: 100;
+}
+
+.boxProfile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.profile{
+    display: flex;
+    width: 14rem;
+    height: 16rem;
+    border-radius: 2vh;
+    background-color: antiquewhite;
+    
+    justify-content: center;
+    background-size: cover; 
+    box-shadow: 0 10px 19px #514f4f57;
+    background-position: 100%;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+.profile:hover{
+    transform: scale(1.05);
+    box-shadow: 0 20px 29px #514f4f9e;
+}
+
+.profile img{
+    width: 100%;
+    height: 100%;
+    border-radius: 2vh;
+    
+}
+
+.linkProfile{
+    display: flex;
+    position: absolute;
+    width: 15vw;
+    height: 6vh;
+    background-color: white;
+    border-radius: 2vh;
+    margin-bottom: 2%;
+    top: 80%;
+    z-index: 9999;
+}
+
+.linkProfile img{
+    width: 4vh;
+    height: 4vh;
+    margin-left: 5%;
+}
+
+.textProfile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: black;
+}
+
+#bianca{
+    background-image: url('../assets/profile_bianca.jpeg');
+}
+
+#kayky{
+    background-image: url('../assets/profile_kayky.jpeg');
+}
+
+#erick{
+    background-image: url('../assets/erick.jpeg');
+}
+
+#enzo{
+    background-image: url('../assets/enzo.png');
+}
+
+#boos{
+    background-image: url('../assets/boos.jfif');
+}
+
+#danilo{
+    background-image: url("../assets/profile_danilo.jpeg");
+}
+
+.footer{
+    display: flex;
+    width: 100vw;
+    height: 20rem;
+    background-color: #FFCB45;
+}
+
+.footerContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 85%;
+    margin: auto;
+    margin-bottom: 0;
+}
+
+.footerContent{
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+
+.footerMedia{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+}
+
+.footerLogo{
+    display: flex;
+    width: 100%;
+    height: 70%;
+}
+
+.footerLogo img{
+    width: 20vw;
+    height: 20vh;
+}
+
+.footerSocialMidia{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 59%;
+    height: 30%;
+}
+
+.socialMedia{
+    width: 2.81rem;
+    height: 2.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    box-shadow: 0 3px 8px #514f4f;
+}
+
+.socialMedia i{
+    font-size: x-large;
+}
+
+.bgYellow{
+    background-color:#FFCB45;
+}
+
+.bgWhite{
+    background-color: white;
+}
+
+.footerText{
+    display: flex;
+    width: 60%;
+    height: 100%;
+}
+
+.footerInfo{
+    display: flex;
+    flex-direction: column;
+    width: 33.3%;
+    height: 53%;
+    justify-content: space-around;
+}
+
+.footerInfo span, .footerInfo a{
+    font-weight: lighter;
+    color: black;
+    text-decoration: none;
+}
+
+.footerInfo a:hover{
+    font-weight: bold;
+    transition: 0.2s;
+    color: #295897;
+}
+
+.footerRights{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 25%;
+    border-top-width: 1px;
+    border-top-style: outset;
+    border-top-color: black;
+}
+
+@media screen and (max-width: 600px) {
+   
+    body, html{
+        overflow-x: hidden;
+        
+    }
+
+    .logo img{
+        width: 39vw !important;
+    }
+
+
+    #login-home {
+        width: 23vw !important;
+        height: 6vh !important;
+    }
+
+    .botao-login img {
+        height: 3vh !important;
+        width: 5.5vw !important;
+        margin-right: 12% !important;
+    }
+
+    .banner{
+        height: 50vh;
+        width: 100vw;
+        
+    }
+
+    .menu{
+        display: none !important;
+    }
+
+    .nav-bar{
+        display: none;
+    }
+
+    .nav-bar li{
+        font-size: 20px;
+    }
+
+    .containerFrase{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .frase{
+        display: flex;
+        align-self: center;
+        font-size: 20vh;
+        margin-top: -12vh;
+        margin-right: -170vh;
+    }
+
+    .header img {
+        width: 60vh;
+        height: 60vw;
+        margin-left: -6vh;
+    }
+
+    .buttonLogin button{
+        width: 21.3vw;
+        height: 8.8vh;
+        font-size: x-large;
+    }
+
+    .boxSocial{
+        display: block;
+    }
+
+    .textArea{
+        width: 100%;
+    }
+
+    .boxProfile{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+    
+
+    .imageArea {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: fit-content;
+        margin-top: 5%;
+        margin-bottom: 0%;
+    }
+
+    .imageArea img{
+        width: 81vw;
+        height: 35.3vh;
+    }
+
+    .heading{
+        display: inline-block;
+        width: 100%;
+    }
+
+    .heading h2{
+        font-size: 4vh;
+    }
+
+    .coloredSpan{
+        width: 95vw;
+        font-size: 2.5vh;
+        margin-top: 3%;
+        margin-bottom: 3%;
+    }
+
+    .socialText span{
+        font-size: 2vh;
+        width: 261vw;
+    }
+
+    .fullTextArea span {
+        font-size: 2vh;
+        width: 201vw;
+        margin-top: 2%;
+    }
+
+    .profile{
+        width: 60.7vw;
+        height: 39.1vh;
+    }
+
+    .textProfile{
+        width: 159vh;
+        margin-left: 4%;
+    }
+
+    .linkProfile {
+        width: 22vh;
+        height: 7vh;
+    }
+
+    .linkProfile img {
+        width: 5vh;
+        height: 5vh;
+        margin-left: 5%;
+    }
+
+    #kayky, #bianca, #boos, #danilo{
+        margin-bottom: 5%;
+    }
+
+    .footer{
+        height: 145.1vh;
+    }
+
+    .footerContainer{
+        height: 100%;
+    }
+
+    .footer img{
+        width: 91vw;
+        height: 30vh;
+    }
+
+    .footerContent{
+        flex-direction: column;
+    }
+
+    .footerMedia{
+        margin-right: 3vh;
+    }
+
+    .footerSocialMidia{
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        width: 254%;
+        height: 30%;
+        margin-bottom: 5vh;
+    }
+
+    .footerText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50vh;
+    }
+
+    .footerInfo{
+        font-size: 3.2vh;
+        width: 45vh;
+    }
+
+    .footerRights{
+        font-size: xx-large;
+        margin-top: 19%;
+    }
+
+    .socialMedia{
+        width: 15.3vw;
+        height: 9.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 32px;
+        box-shadow: 0 3px 8px #514f4f;
+    }
+
+    .socialMedia i{
+        font-size: xxx-large;
+    }
+   
+}
+
+.nav-bar {
+    width: 92%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1%;
+    flex-direction: row;
+}
+
+.logo img {
+    height: 15vh;
+    width: 13vw;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 55%;
+    align-self: baseline;
+    justify-content: space-evenly;
+    font-size: 3.0vh;
+
+    color: rgb(251, 251, 251);
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#menu span {
+    border-bottom: solid 0.6vh #FFCB45;
+}
+
+#menu ul li {
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+
+.botao-login img {
+    height: 3vh;
+    width: 1.5vw;
+    margin-right: 12%;
+}
+
+#login-home {
+    width: 9vw;
+    height: 6vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+#login-home:hover {
+    font-weight: bold;
+    background-color: #d2a83e;
+    transform: scale(1.05);
+    cursor: pointer;
+}

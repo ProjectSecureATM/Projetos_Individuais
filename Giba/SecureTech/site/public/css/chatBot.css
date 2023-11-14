@@ -1,0 +1,245 @@
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #295897;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.402);
+    display: flex;
+}
+
+#chatbot-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #FFCB45;
+    color: #000000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#chatbot-body {
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    padding: 10px;
+    
+}
+
+#chatbot-body .opcoes{
+   
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 3vh;
+    
+}
+
+#voltarChat {
+    width: 6vw;
+    height: 4vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: bold;
+    align-self: baseline;
+    transition: 0.5s ease-in-out;
+}
+
+#voltarChat:hover {
+    color: white;
+    background-color: #021e46;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#btNaoRespondida{
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 25px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 9px;
+  padding-right: 9px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+#btNaoRespondida:hover,
+#btNaoRespondida:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+#btNaoRespondida:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+#btNaoRespondida:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+
+}
+
+.respostaChat{
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.divOpcoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.opt{
+    width: 100%;
+    /* background-color: #FFCB45; */
+    border: 1.5px solid #FFCB45;
+    height: 7vh;
+    margin-bottom: 3%;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.opt:hover{
+    background-color: #FFCB45;
+    color: black;
+    transform: scale(1.03);
+}
+
+
+#containerRelatarProblema{
+    font-size: 15px;    
+    /* display: flex;
+    flex-direction: column; */
+}
+
+
+#NomeSobrenome{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 1vh;
+}
+
+
+#inputProblemaNome{
+    width: 80px;
+    border-radius: 5px;
+}
+
+#inputProblema{
+    width: 120px;
+    border-radius: 5px;
+}
+
+
+#inputProblemaEmail{
+    width: 230px;
+    border-radius: 5px;
+}
+
+#inputProblemaTitulo{
+    border-radius: 5px;
+    width: 215px;
+}
+
+#inputProblemaDetalhes{
+    border-radius: 5px;
+    width: 315px;
+}
+
+
+#emailTotal{
+    padding-bottom: 1vh;
+}
+#tituloTotal{
+    padding-bottom: 1vh;
+}
+#detalheTotal{
+    padding-bottom: 1vh;
+}
+
+#btProblema{
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 25px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 9px;
+    padding-right: 9px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+  }
+  
+  #btProblema:hover,
+  #btProblema:focus { 
+    background-color: #16437E;
+    color: #ffffff;
+  }
+  
+  #btProblema:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+  }
+  
+  #btProblema:disabled { 
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+  
+  }
