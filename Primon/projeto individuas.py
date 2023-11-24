@@ -1,11 +1,14 @@
 import platform
 import datetime
+import psutil
 
 class USBMonitor:
     def __init__(self):
         self.current_os = platform.system()
         self.last_devices = self.get_devices()
         self.last_update_time = datetime.datetime.now()
+        self.cpu_usage_history = []
+        self.ram_usage_history = []
 
     def get_devices(self):
         if self.current_os == 'Windows':
@@ -27,7 +30,16 @@ class USBMonitor:
             print("Este sistema operacional não é suportado para listar dispositivos USB.")
             return []
 
+    def get_system_usage(self):
+        cpu_usage = psutil.cpu_percent()
+        ram_usage = psutil.virtual_memory().percent
+        return cpu_usage, ram_usage
+
     def list_usb_devices(self):
+        cpu_usage, ram_usage = self.get_system_usage()
+        self.cpu_usage_history.append(cpu_usage)
+        self.ram_usage_history.append(ram_usage)
+
         print("===================")
         print("Dispositivos USB encontrados:")
         for device in self.last_devices:
@@ -38,6 +50,10 @@ class USBMonitor:
 
         print("===================")
         print(f"Última vez atualizado: {self.last_update_time.strftime('%H:%M')}")
+        print("Uso de CPU:")
+        print(f"    {cpu_usage}%")
+        print("Uso de RAM:")
+        print(f"    {ram_usage}%")
 
     def show_device_history(self):
         print("===================")
