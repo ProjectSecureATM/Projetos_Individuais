@@ -1,44 +1,81 @@
 import platform
 import datetime
+import mysql.connector
 import psutil
 
 class USBMonitor:
     def __init__(self):
         self.current_os = platform.system()
-        self.last_devices = self.get_devices()
+        self.conn = mysql.connector.connect(
+            host='localhost',
+            user='root',
+            password='ph993387998',
+            database='SecureATM'
+        )
+        self.cursor = self.conn.cursor()
+        self.last_devices = []
         self.last_update_time = datetime.datetime.now()
-        self.cpu_usage_history = []
-        self.ram_usage_history = []
 
     def get_devices(self):
         if self.current_os == 'Windows':
             try:
                 import pywinusb.hid as hid
-                return hid.find_all_hid_devices()
+                devices = hid.find_all_hid_devices()
+
+                for index, device in enumerate(devices):
+                    porta = f"Porta {index + 1}"
+                    produto = device.product_name if device.product_name else 'Desconhecido'
+                    fabricante = device.vendor_name if device.vendor_name else 'Desconhecido'
+
+                    # Inserir informações na tabela CodigoComponentes
+                    self.cursor.execute(
+                        "INSERT INTO CodigoComponentes (Componente) VALUES (%s)",
+                        (porta,)
+                    )
+
+                    # Obter o ID do último componente inserido na tabela CodigoComponentes
+                    self.cursor.execute("SELECT LAST_INSERT_ID()")
+                    last_id = self.cursor.fetchone()[0]
+
+                    # Inserir informações na tabela DescricaoComponentes
+                    self.cursor.execute(
+                        "INSERT INTO DescricaoComponentes (produto, frabricante, fkComponente) VALUES (%s, %s, %s)",
+                        (produto, fabricante, last_id)
+                    )
+
+                self.conn.commit()
+                self.last_devices = devices
+                return devices
             except ImportError:
                 print("A biblioteca pywinusb não está instalada. Por favor, instale-a para usar esta funcionalidade.")
                 return []
-        elif self.current_os == 'Linux':
-            try:
-                import pyudev
-                context = pyudev.Context()
-                return list(context.list_devices(subsystem='usb'))
-            except ImportError:
-                print("A biblioteca pyudev não está instalada. Por favor, instale-a para usar esta funcionalidade.")
-                return []
-        else:
-            print("Este sistema operacional não é suportado para listar dispositivos USB.")
-            return []
-
+        # Restante do código para o sistema operacional Linux...
+    
     def get_system_usage(self):
         cpu_usage = psutil.cpu_percent()
         ram_usage = psutil.virtual_memory().percent
+
+        try:
+            # Inserir dados de CPU na tabela Leitura
+            self.cursor.execute(
+                "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
+                (cpu_usage, 1, 1)  # Supondo que 1 representa CPU na tabela Componentes
+            )
+
+            # Inserir dados de RAM na tabela Leitura
+            self.cursor.execute(
+                "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
+                (ram_usage, 2, 1)  # Supondo que 2 representa RAM na tabela Componentes
+            )
+
+            self.conn.commit()
+        except mysql.connector.Error as error:
+            print(f"Erro ao inserir na tabela Leitura: {error}")
+
         return cpu_usage, ram_usage
 
     def list_usb_devices(self):
         cpu_usage, ram_usage = self.get_system_usage()
-        self.cpu_usage_history.append(cpu_usage)
-        self.ram_usage_history.append(ram_usage)
 
         print("===================")
         print("Dispositivos USB encontrados:")
@@ -55,39 +92,29 @@ class USBMonitor:
         print("Uso de RAM:")
         print(f"    {ram_usage}%")
 
-    def show_device_history(self):
-        print("===================")
-        print("Histórico de dispositivos conectados:")
-        if self.last_devices:
-            for device in self.last_devices:
-                if self.current_os == 'Windows':
-                    print(f"Produto: {device.product_name}, Fabricante: {device.vendor_name}")
-                elif self.current_os == 'Linux':
-                    print(f"Dispositivo: {device.device_path}, Tipo: {device.device_type}, ID do Produto: {device.get('ID_MODEL')}, ID do Fabricante: {device.get('ID_VENDOR')}")
-        else:
-            print("Nenhum dispositivo USB foi conectado.")
-
     def run(self):
         print("Bem-vindo ao Monitor de Dispositivos USB!")
         while True:
             print("===================")
             print("Escolha uma opção:")
-            print("1 - Atualizar Lista")
-            print("2 - Histórico de Dispositivos Conectados")
+            print("1 - Atualizar Lista de Dispositivos USB")
+            print("2 - Mostrar Dispositivos USB")
             print("3 - Sair")
             escolha = input("Digite o número correspondente à opção desejada: ")
             
             if escolha == '1':
-                self.last_devices = self.get_devices()
+                self.get_devices()
                 self.last_update_time = datetime.datetime.now()
-                self.list_usb_devices()
             elif escolha == '2':
-                self.show_device_history()
+                self.list_usb_devices()
             elif escolha == '3':
                 print("Encerrando o monitor de dispositivos USB.")
                 break
             else:
                 print("Opção inválida. Tente novamente.")
+
+        self.cursor.close()
+        self.conn.close()
 
 if __name__ == "__main__":
     usb_monitor = USBMonitor()

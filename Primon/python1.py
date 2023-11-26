@@ -1,35 +1,37 @@
-import importlib
+import platform
+import datetime
 
-# Tenta importar o módulo pyusb
-try:
-    importlib.import_module('usb.core')
-except ImportError:
-    print("O módulo pyusb não está instalado. Instalando agora...")
+class USBMonitor:
+    def __init__(self):
+        self.current_os = platform.system()
+        self.last_devices = self.get_devices()
+        self.last_update_time = datetime.datetime.now()
 
-    import subprocess
-    import sys
+    def get_devices(self):
+        if self.current_os == 'Windows':
+            try:
+                import pywinusb.hid as hid
+                return hid.find_all_hid_devices()
+            except ImportError:
+                print("A biblioteca pywinusb não está instalada. Por favor, instale-a para usar esta funcionalidade.")
+                return []
+        elif self.current_os == 'Linux':
+            try:
+                import pyudev
+                context = pyudev.Context()
+                return list(context.list_devices(subsystem='usb'))
+            except ImportError:
+                print("A biblioteca pyudev não está instalada. Por favor, instale-a para usar esta funcionalidade.")
+                return []
+        else:
+            print("Este sistema operacional não é suportado para listar dispositivos USB.")
+            return []
 
-    try:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyusb'])
-    except subprocess.CalledProcessError as e:
-        print("Ocorreu um erro ao instalar o pyusb:", e)
-        exit()
-
-# Agora importe o módulo pyusb após a tentativa de instalação
-import usb.core
-
-# Resto do seu código para listar dispositivos USB
-def listar_dispositivos_usb():
-    dispositivos = usb.core.find(find_all=True)
-    
-    if dispositivos is None:
-        print("Nenhum dispositivo USB encontrado.")
-        return
-    
-    for dispositivo in dispositivos:
-        fabricante = usb.util.get_string(dispositivo, dispositivo.iManufacturer)
-        modelo = usb.util.get_string(dispositivo, dispositivo.iProduct)
-        print(f"Fabricante: {fabricante}, Modelo: {modelo}")
-
-# Chamando a função para listar dispositivos USB
-listar_dispositivos_usb()
+    def list_usb_devices(self):
+        print("===================")
+        print("Dispositivos USB encontrados:")
+        for device in self.last_devices:
+            if self.current_os == 'Windows':
+                print(f"Produto: {device.product_name}, Fabricante: {device.vendor_name}")
+            elif self.current_os == 'Linux':
+                print(f"Dispositivo: {device.device_path}, Tipo: {device.device_type}, ID do Produto: {device.get('ID_MODEL')}, ID do Fabricante: {device.get('ID_VENDOR')}")
