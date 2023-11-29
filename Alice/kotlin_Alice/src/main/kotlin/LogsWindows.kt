@@ -4,6 +4,8 @@ import com.sun.jna.platform.win32.WinNT
 import com.sun.jna.win32.W32APIOptions
 
 interface Advapi32Ex : Advapi32 {
+    abstract fun ReadEventLog(hEventLog: WinNT.HANDLE, i: Int, i1: Int, buffer: ByteArray, bufferSize: Int, bytesRead: IntArray, nothing: Nothing?): Boolean
+
     companion object {
         val INSTANCE: Advapi32Ex = Native.load("Advapi32", Advapi32Ex::class.java, W32APIOptions.DEFAULT_OPTIONS)
     }
@@ -30,8 +32,4 @@ fun readWindowsLogs() {
     } catch (e: Exception) {
         e.printStackTrace()
     }
-}
-
-fun main() {
-    readWindowsLogs()
 }

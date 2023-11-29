@@ -19,6 +19,16 @@ fun main() {
             // Espera por 1 segundo antes de verificar novamente
             Thread.sleep(1000)
         }
+
+    } else if (soNome == "Windows"){
+
+        var i = 0
+        while(i < 10 ){
+            readWindowsLogs()
+            Thread.sleep(1000)
+            i++
+        }
+
     } else {
 
         println("A SecureATM não trabalha com esse S.O")
@@ -29,6 +39,7 @@ fun main() {
 fun extractOsName(fullOsName: String): String {
     return when {
         fullOsName.contains("Linux") -> "Linux"
+        fullOsName.contains("Windows") -> "Windows"
         else -> "A SecureATM não trabalha com esse tipo de S.O"
     }
 }
