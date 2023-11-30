@@ -29,7 +29,7 @@ class USBMonitor:
 
                     # Inserir informações na tabela CodigoComponentes
                     self.cursor.execute(
-                        "INSERT INTO CodigoComponentes (Componente) VALUES (%s)",
+                        "INSERT IGNORE INTO CodigoComponentes (Componente) VALUES (%s)",
                         (porta,)
                     )
 
@@ -39,7 +39,7 @@ class USBMonitor:
 
                     # Inserir informações na tabela DescricaoComponentes
                     self.cursor.execute(
-                        "INSERT INTO DescricaoComponentes (produto, frabricante, fkComponente) VALUES (%s, %s, %s)",
+                        "INSERT IGNORE INTO DescricaoComponentes (produto, fabricante, dataDia ,fkComponente) VALUES (%s, %s, NOW(), %s)",
                         (produto, fabricante, last_id)
                     )
 
@@ -93,22 +93,23 @@ class USBMonitor:
         print(f"    {ram_usage}%")
 
     def run(self):
-        print("Bem-vindo ao Monitor de Dispositivos USB!")
+        print("Bem-vindo ao Monitor de Dispositivos!")
         while True:
             print("===================")
             print("Escolha uma opção:")
-            print("1 - Atualizar Lista de Dispositivos USB")
-            print("2 - Mostrar Dispositivos USB")
+            print("1 - Atualizar Lista de Dispositivos")
+            print("2 - Mostrar Dispositivos")
             print("3 - Sair")
             escolha = input("Digite o número correspondente à opção desejada: ")
             
             if escolha == '1':
                 self.get_devices()
                 self.last_update_time = datetime.datetime.now()
+                print("Lista Atualizada!")
             elif escolha == '2':
                 self.list_usb_devices()
             elif escolha == '3':
-                print("Encerrando o monitor de dispositivos USB.")
+                print("Encerrando o monitor de dispositivos.")
                 break
             else:
                 print("Opção inválida. Tente novamente.")
