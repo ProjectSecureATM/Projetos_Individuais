@@ -9,7 +9,7 @@ class USBMonitor:
         self.conn = mysql.connector.connect(
             host='localhost',
             user='root',
-            password='ph993387998',
+            password='Ph993387998',
             database='SecureATM'
         )
         self.cursor = self.conn.cursor()
@@ -39,9 +39,9 @@ class USBMonitor:
 
                     # Inserir informações na tabela DescricaoComponentes
                     self.cursor.execute(
-                        "INSERT IGNORE INTO DescricaoComponentes (produto, fabricante, dataDia ,fkComponente) VALUES (%s, %s, NOW(), %s)",
-                        (produto, fabricante, last_id)
-                    )
+    "INSERT IGNORE INTO DescricaoComponentes (produto, fabricante, dataDia ,fkComponente) VALUES (%s, %s, NOW(), %s)",
+    (produto, fabricante, last_id)
+)
 
                 self.conn.commit()
                 self.last_devices = devices
@@ -59,13 +59,13 @@ class USBMonitor:
             # Inserir dados de CPU na tabela Leitura
             self.cursor.execute(
                 "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
-                (cpu_usage, 1, 1)  # Supondo que 1 representa CPU na tabela Componentes
+                (cpu_usage, 3, 1)  # Supondo que 1 representa CPU na tabela Componentes
             )
 
             # Inserir dados de RAM na tabela Leitura
             self.cursor.execute(
                 "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
-                (ram_usage, 2, 1)  # Supondo que 2 representa RAM na tabela Componentes
+                (ram_usage, 1, 1)  # Supondo que 2 representa RAM na tabela Componentes
             )
 
             self.conn.commit()
