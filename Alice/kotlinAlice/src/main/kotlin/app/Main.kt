@@ -21,7 +21,7 @@ open class Main {
 
             repositorio.criarTabela()
 
-            val caminhoArquivoLog = "C:\\Users\\VkSenes\\OneDrive\\Documentos\\Alice_SPtech\\Semestre 2\\Sprint2 - P.I\\Projetos_Individuais\\Alice\\Logs\\arquivo.log"
+            val caminhoArquivoLog = "C:\\Users\\VkSenes\\OneDrive\\Documentos\\Alice_SPtech\\Semestre 2\\Sprint2 - P.I\\Projetos_Individuais\\Alice\\arquivo.log"
             val arquivoLog = FileOutputStream(caminhoArquivoLog, true)
             val printStream = PrintStream(arquivoLog)
 

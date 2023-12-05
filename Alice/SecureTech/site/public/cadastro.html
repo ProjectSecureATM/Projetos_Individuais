@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecureATM | Cadastro</title>
+    <script src="./js/sessao.js"></script>
+    <script src="./js/cadastro.js"></script>
+
+    <link rel="stylesheet" href="css/chatBot.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="styles/cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&family=Readex+Pro&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" href="./assets/fiveicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="logo-celular">
+        <img class="imagem-logo" src="./imgs/logo.png" alt="Logo">
+    </div>
+    <div onclick="backToHome()" class="botao-login">
+        <button id="login-home"><img src="./imgs/back-icon.png">Voltar</button>
+    </div>
+    <div class="main">
+        <div class="card-cadastro-info">
+            <img class="imagem-logo" src="./assets/secure_atm_logo.png" alt="Logo">
+            <h1 class="titulo-info">Monitoramento Prático</h1>
+            <p class="texto-info">Faça já o seu cadastro como funcionario para ter acesso ao monitoramento do caixa
+                eletrônico de sua empresa, garantindo a segurança, manutenção, e otimização do sistema monitorado.</p>
+        </div>
+        <div class="card-cadastro-user">
+            <div class="info-user">
+                <h2 class="titulo-user1">VAMOS COMEÇAR!</h2>
+                <h1 class="titulo-user2">Crie uma conta de funcionario</h1>
+                <p class="texto-user">Preencha os dados abaixo para criar sua conta</p>
+            </div>
+
+            <div class="cadastro">
+                <div class="text-field">
+                    <!-- <label for="nome">Nome</label> -->
+                    <input type="text" id="nome_input" placeholder="Nome">
+                    <div id="erro_nome"></div>
+                </div>
+                <div class="text-field">
+                    <!-- <label for="email">Email</label> -->
+                    <input type="text" id="email_input" placeholder="Email">
+                    <div id="erro_email"></div>
+                </div>
+                <div class="text-field">
+                    <!-- <label for="senha">Criar Senha</label> -->
+                    <input type="password" id="senha_input" placeholder="Senha">
+                    <div id="erro_senha"></div>
+                </div>
+                <div class="text-field">
+                    <!-- <label for="confirmar-senha">Confirmar Senha</label> -->
+                    <input type="password" id="confirmacao_senha_input" placeholder="Confirmação de senha">
+                    <div id="erro_confirmar_senha"></div>
+                </div>
+                <div class="text-field">
+                        <input type="password" id="codigo_input" placeholder="Insira o Código da Empresa">
+                        <div id="erro_codigo"></div>
+                </div>
+                <button onclick="cadastrar()" class="botao-cadastro-user botao-amarelo">Cadastrar</button>
+                <div class="card-redirecionador-user">
+                    <span class="texto-user2">Ja tem uma conta? <a href="login.html" class="a-user">LOGIN</a></span>
+                </div>
+            </div>
+
+
+            <div class="chatbot-container">
+                <div id="chatbot-icon">Chat</div>
+                <div id="chatbot-body">
+                  <div id="divOpcoes">
+                  <div id="perguntaBot">🤖 Bot: Olá! Como posso ajudar?</div>
+                  <div class="opcoes">
+                    <button onclick="opcao1()" id="margin" class="opt">1- Dúvidas frequentes</button>
+                    <button onclick="opcao2()" class="opt">2- Relatar problema</button>
+                    <button onclick="opcao3()" class="opt">3- Mudança de plano</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
+          
+        </div>
+</body>
+<script src="js/ChatBot.js"></script>
+</html>
+<script>
+    function backToHome() {
+        window.location = 'index.html'
+    }
+</script>

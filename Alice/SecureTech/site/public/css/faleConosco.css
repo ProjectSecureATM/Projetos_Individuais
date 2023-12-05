@@ -1,0 +1,487 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.principal {
+    height: fit-content;
+    width: 100%;
+    background-color: #ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 92%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    flex-direction: column;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    z-index: 9999;
+    position: relative;
+}
+
+.banner {
+    position: absolute;
+    height: 130vh;
+    width: 100%;
+    margin: 0;
+    background-color: #021e46;
+    background-image: url('../assets/bannerFaleConosco.jpeg');
+    background-position: cover;
+    background-repeat: no-repeat;
+}
+
+.logo img {
+    height: 15vh;
+    width: 13vw;
+}
+
+.div_menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 70%;
+    height: 100%;
+    align-self: baseline;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3.0vh;
+    font-weight: 700;
+    color: white;
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#menu span {
+    border-bottom: solid 0.6vh #FFCB45;
+}
+
+#menu ul li {
+    margin-bottom: 2%;
+    cursor: pointer;
+}
+
+.menu li {
+    margin-right: 30px;
+}
+
+.menu a {
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.menu a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #194075, #f7b102);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-in-out;
+}
+
+.menu a:hover::before {
+    transform: scaleX(1);
+}
+
+.menu[data-animation="bonus"] a::before {
+    transform-origin: right;
+}
+
+.menu[data-animation="bonus"] a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.82, 0.94);
+}
+
+.botao-login img {
+    height: 3vh;
+    width: 1.5vw;
+    margin-right: 12%;
+}
+
+#login-home {
+    width: 9vw;
+    height: 6vh;
+    border-style: none;
+    background-color: #FFCB45;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3vh;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+
+#login-home:hover {
+    font-weight: bold;
+    background-color: white;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container-quad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    position: relative;
+    flex-direction: column;
+    margin-top: 3%;
+}
+
+.quadrado {
+    width: 75%;
+    height: 75vh;
+    background-color: white;
+    box-shadow: 0px 4px 52px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.text {
+    margin-left: 8%;
+    width: 80%;
+    margin-bottom: 2%;
+    height: 13vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+}
+
+.text h1 {
+    color: white;
+    font-size: 6.5vh;
+}
+
+.text span {
+    color: #FFCB45;
+}
+
+.left {
+    width: 60%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFCB45;
+}
+
+.text-left{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.localizacao {
+    width: 100%;
+    height: 50%;
+}
+
+.localizacao p{
+    width: 70%;
+    height: 50%;
+}
+
+.contato {
+    width: 100%;
+    height: 50%;
+}
+
+.right {
+    width: 48%;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-right {
+    display: flex;
+    flex-direction: column;
+    width: 83%;
+    color: #021e46;
+    text-align: center;
+    font-size: 3.4vh;
+    height: 32vh;
+    justify-content: space-between;
+    text-shadow: 2px 1px 6px #00000091;
+}
+
+.text-right span {
+    color: #f1b929;
+    text-decoration: double;
+}
+
+.text-right button {
+    width: 50%;
+    background-color: #021e46;
+    color: white;
+    border-style: none;
+    align-self: center;
+    border-radius: 5px;
+    font-weight: 900;
+    font-size: 2.5vh;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 5vh;
+    height: 6vh;
+}
+
+.text-right button:hover {
+    transform: scale(1.08);
+    transition: 1s;
+    background-color: #FFCB45;
+    color: #021e46;
+}
+
+.content-left {
+    width: 85%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes-sociais{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    width: 60%;
+    height: 50%;
+}
+
+.contato h1, .redes-sociais h1, .localizacao h1 {
+    color: #295897;
+}
+
+.footerSocialMidia {
+    flex-direction: row;
+    width: 100%;
+    height: 40%;
+}
+
+.footerSocialMidia {
+    display: flex;
+    top: 9vh;
+    left: 11vw;
+    gap: 2rem;
+    margin: 0;
+}
+
+.bgWhite, .bgYellow {
+    background-color: #ffffff;
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #295897;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    z-index: 9999;
+    box-shadow: 12px 10px 15px rgba(0, 0, 0, 0.402);
+}
+
+#chatbot-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #FFCB45;
+    color: #000000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+#chatbot-body {
+    display: none;
+    max-height: 300px;
+    overflow: auto;
+    padding: 10px;
+}
+
+#chatbot-body .opcoes {
+    /* height: 10vh; */
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.opt {
+    width: 100%;
+    /* background-color: #FFCB45; */
+    border: 1.5px solid #FFCB45;
+    height: 7vh;
+    margin-bottom: 3%;
+    border-radius: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.opt:hover {
+    background-color: #FFCB45;
+    color: black;
+    transform: scale(1.03);
+}
+
+#margin {
+    margin-top: 5%;
+}
+
+.socialMedia {
+    width: 2.81rem;
+    height: 2.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    box-shadow: 0 3px 8px #514f4f;
+}
+
+.socialMedia i {
+    font-size: x-large;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .opt {
+        width: 60vw;
+    }
+
+  .div_menu{
+    margin-left: 2vw;
+  }
+
+    .menu a {
+        font-size: 2vh;
+    }
+
+
+    .logo img {
+        width: 20vw;
+        height: 10vh;
+        margin-top: -1vh;
+    }
+
+    .navBar .login-button {
+        width: 12vh;
+        height: 5vh;
+    }
+
+    .login-button .logo {
+        height: 3vh;
+        width: 4vw;
+        margin-top: 0.1vh;
+    }
+
+    .content-left p {
+        font-size: 35px;
+    }
+
+    #login-home {
+        width: 20vw;
+        height: 5vh;
+    }
+
+    #login-home img {
+        height: 3vh;
+        width: 4vw;
+        margin-top: 0.1vh;
+    }
+
+    .text {
+        margin-top: 5%;
+        margin-bottom: 25%;
+        font-size: 3vh;
+    }
+
+    .text p {
+        width: 95%;
+    }
+
+    .container-quad {
+        height: fit-content;
+    }
+
+    .quadrado {
+        flex-direction: column;
+        height: 150vh;
+        width: 93%;
+        margin-bottom: 5%;
+    }
+
+    .left {
+        width: 85%;
+    }
+
+    .content-left {
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+    }
+
+    .text-right {
+        height: 24vh;
+    }
+
+    .text-right button {
+        height: 6vh;
+    }
+}
