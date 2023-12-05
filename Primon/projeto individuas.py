@@ -9,6 +9,7 @@ class USBMonitor:
         self.conn = mysql.connector.connect(
             host='localhost',
             user='root',
+            #password='sptech',
             password='Ph993387998',
             database='SecureATM'
         )
@@ -49,7 +50,6 @@ class USBMonitor:
             except ImportError:
                 print("A biblioteca pywinusb não está instalada. Por favor, instale-a para usar esta funcionalidade.")
                 return []
-        # Restante do código para o sistema operacional Linux...
     
     def get_system_usage(self):
         cpu_usage = psutil.cpu_percent()
@@ -59,13 +59,13 @@ class USBMonitor:
             # Inserir dados de CPU na tabela Leitura
             self.cursor.execute(
                 "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
-                (cpu_usage, 3, 1)  # Supondo que 1 representa CPU na tabela Componentes
+                (cpu_usage, 3, 1)  
             )
 
             # Inserir dados de RAM na tabela Leitura
             self.cursor.execute(
                 "INSERT INTO Leitura (DataRegistro, Valor, Componente_ID, ATMComp_ID, APIID) VALUES (NOW(), %s, %s, %s, NULL)",
-                (ram_usage, 1, 1)  # Supondo que 2 representa RAM na tabela Componentes
+                (ram_usage, 1, 1)  
             )
 
             self.conn.commit()
