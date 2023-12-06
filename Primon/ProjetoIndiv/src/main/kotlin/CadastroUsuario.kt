@@ -60,8 +60,9 @@ fun main() {
 
                     when ( escolhaMonitor) {
                         1 -> {
-
                             historicoCapturas.add(LocalDateTime.now())
+                            showMessageDialog(null, "")
+                            showMessageDialog(null, "Dispositivos atualizados!")
                         }
                         2 -> {
                             val statement = connection.createStatement()
