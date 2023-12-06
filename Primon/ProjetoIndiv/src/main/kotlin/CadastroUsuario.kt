@@ -9,7 +9,7 @@ import javax.swing.JOptionPane.showMessageDialog
 fun main() {
     val url = "jdbc:mysql://localhost:3306/SecureATM"
     val user = "root"
-    val password = "Ph993387998"
+    val password = "#Gf48556583830"
 
     // Estabelecer a conexão com o banco de dados
     val connection = DriverManager.getConnection(url, user, password)
