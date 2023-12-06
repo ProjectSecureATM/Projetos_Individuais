@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+
+    <title>Informações de Segurança da Rede</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Outros scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- ... -->
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashJulio.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon" style="width: 35%; height: 14vh;">
+                    <img class="imgLogoDash" src="../assets/logo Securu ATM.png" alt="">
+                </div>
+                <div class="sidebar-brand-text"> Secure ATM</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 espacamento">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="DashBoard-VisaoGeral.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/binoculars.png" alt="">
+                    <span>Visão Geral</span>
+                </a>
+                <a class="nav-link" href="dashVisaoGeralRede_Julio.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/dashboard amarelo.png" alt="">
+                    <span style="color: goldenrod; font-weight: bold;">Dashboard</span>
+                </a>
+                <a class="nav-link" href="DashBoard-AddATM.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/add_ATM.png" alt="">
+                    <span>Cadastrar ATM</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Inovações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inovações Secure ATM:</h6>
+                        <a href="dashVaz.html" class="collapse-item">Dash Gabroh</a>
+                        <a href="DashBoard-VisaoGeral-Giba.html" class="collapse-item">Desempenho Sistêmico</a>
+                        <a href="dashVisaoGeralRede_Julio.html" class="collapse-item">Segurança de Rede</a>
+                        <a href="DashBoard-VisaoGeral-Paulo.html" class="collapse-item">Dash Paulão</a>
+                        <a href="DashBoard-VisaoGeral-Primon.html" class="collapse-item">Dash Primon</a>
+                        <a class="collapse-item">Dash Alice</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button class="buttonNavBar">
+                        <a href="../homeDashBoard.html">Voltar para Agência</a>
+                    </button>
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bruno</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Certeza que você quer sair?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Selecione "Sair" para deslogar.</div>
+                            <div class="modal-footer">
+                                <button style="text-align: left;" class="btn btn-secondary" type="button"
+                                    data-dismiss="modal">Cancelar</button>
+                                <a class="btn btn-primary" href="../index.html">Sair</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <div class="informacao">
+                            <div class="iconeInformacao" onclick="testeBotao()">
+                                <img src="../assets/information.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div id="infosRede">
+                        <div id="tamDiv" class="card">
+                            <div id="tamDiv" class="card">
+                                <div id="tamDiv" class="col-xl-3 col-md-6 mb-4">
+                                    <div id="tamDiv" class="card border-left-primary shadow h-100 py-2"
+                                        id="divConteudo">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        Meu IP:</div>
+                                                    <span id="ip_rede"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="card_divConteudo" class="card divConteudo">
+                                <div id="tamDiv" class="card">
+                                    <div id="tamDiv" class="col-xl-3 col-md-6 mb-4" id="divConteudo">
+                                        <div id="tamDiv" class="card border-left-primary shadow h-100 py-2">
+                                            <div class="card-body">
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col mr-2">
+                                                        <div
+                                                            class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                            Tráfego de Rede:</div>
+                                                        <span id="trafego"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" id="div" style="justify-content: center; align-items: center;">
+
+
+                                <div class="col-xl-8 col-lg-7">
+                                    <div class="card shadow mb-4">
+
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">Picos de Pacotes</h6>
+                                            <div class="dropdown no-arrow">
+                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                    aria-labelledby="dropdownMenuLink">
+                                                    <a class="dropdown-item" href="#">Something else here</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <canvas id="ProcessosChart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-xl-8 col-lg-7">
+                                    <div class="card shadow mb-4">
+
+                                        <div
+                                            class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                            <h6 class="m-0 font-weight-bold text-primary">Registro de IP por Pacotes
+                                            </h6>
+                                            <button id="buttonNavBar" class="buttonNavBar" onclick="infosRede()"><span
+                                                    style="color: aliceblue;">Ver informações de IP</span></button>
+                                            <div class="dropdown no-arrow">
+                                                <div id="infoIpDiv">
+                                                    <!-- This is the div where you will display the fetched information -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Scroll to Top Button-->
+                                    <a class="scroll-to-top rounded" href="#page-top">
+                                        <i class="fas fa-angle-up"></i>
+                                    </a>
+
+                                    <!-- Logout Modal-->
+                                    <div class="modal fade" id="secureModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="labelSecurity" id="labelSeguranca">
+                                                        Confirme suas informações para ter acesso a esses dados</h5>
+                                                    <button class="close" type="button" data-bs-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Selecione "Cancelar" para sair.
+                                                    <form id="infoRedeForm">
+                                                        <div class="form-group">
+                                                            <label for="inputEmail">Email:</label>
+                                                            <input type="email" class="form-control" id="inputEmail"
+                                                                placeholder="Digite seu email" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="inputPassword">Senha:</label>
+                                                            <input type="password" class="form-control"
+                                                                id="inputPassword" placeholder="Digite sua senha"
+                                                                required>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button style="text-align: left;" class="btn btn-secondary"
+                                                        type="button" data-bs-dismiss="modal">
+                                                        Cancelar
+                                                    </button>
+                                                    <button class="btn btn-primary"
+                                                        onclick="submitInfoRedeForm()">Enviar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="conteudoDaPagina">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <script>
+        var trafegoAnormal = false;
+
+        var idAgen = sessionStorage.getItem('idAgen')
+
+        window.onload = function () {
+            mostrarPacotesRede(idAgen)
+            obterIP()
+        }
+        function mostrarPacotesRede(idAgen) {
+            mostrarPacotes(idAgen);
+            setInterval(function () {
+                mostrarPacotes(idAgen);
+            }, 7000);
+        }
+
+        function infosRede() {
+            $('#secureModal').modal('show');
+        }
+
+        async function obterIP() {
+            try {
+                const response = await fetch('https://api64.ipify.org?format=json');
+                const data = await response.json();
+                const ipAddress = data.ip;
+
+                // Exibir o endereço IP no elemento com id "pctTotais"
+                document.getElementById('ip_rede').innerText = ipAddress;
+            } catch (error) {
+                console.error('Erro ao obter o endereço IP:', error);
+            }
+        }
+
+
+        function submitInfoRedeForm() {
+            var email = document.getElementById('inputEmail').value;
+            var password = document.getElementById('inputPassword').value;
+
+            if (email.trim() === '' || password.trim() === '') {
+                alert('Por favor, preencha todos os campos.');
+                return;
+            }
+
+            // Dados a serem enviados no corpo da requisição
+            const dados = {
+                email: email,
+                senha: password
+            };
+
+            fetch("/rede/confirmacaoSeguranca", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro na requisição: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+
+                    alert('Dados recuperados com sucesso!');
+
+                    var feed = document.getElementById("div");
+                    var div = document.createElement("div");
+                    div.setAttribute("id", "ip_recebido")
+                    feed.appendChild(div);
+
+                    //if (data && data.verificado) {
+                    listarIPePacotes();
+                    //}
+
+                    // Atualizar a div existente com os dados recuperados
+                    $('#secureModal').modal('hide');
+                })
+                .catch(error => {
+                    // Lógica a ser executada em caso de erro na requisição
+                    console.error("Erro ao obter informações do servidor:", error);
+                    alert('Erro ao obter informações do servidor.');
+                });
+        }
+
+        function mostrarPacotes(idAgen) {
+            fetch(`/rede/graficoPacotes/${idAgen}`, { cache: 'no-store' })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.error('Erro na API ou nenhum dado encontrado');
+                        return [];
+                    }
+                })
+                .then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    criarGrafico(resposta.labels, resposta.data);
+                })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+                });
+        }
+
+
+        function criarGrafico(labels, data) {
+            var ctx = document.getElementById('ProcessosChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Total de Pacotes',
+                        data: data,
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+            // ...
+        }
+
+
+        function atualizarGraficoPacotes(idAgen, dados, myChart) {
+            fetch(`/rede/atualizarGraficoPacotes/${idAgen}`, { cache: 'no-store' })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        console.error('Nenhum dado encontrado ou erro na API');
+                        return [];
+                    }
+                })
+                .then(function (novoRegistro) {
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log('Dados atuais do gráfico:');
+                    console.log(dados);
+
+                    let validacao = novoRegistro.some(item => item.data_hora === dados.labels[dados.labels.length - 1]);
+
+                    if (!validacao) {
+                        dados.labels.pop();
+                        dados.datasets[0].data.pop();
+
+                        dados.labels.push(novoRegistro[0].data_hora);
+                        dados.datasets[0].data.push(novoRegistro[0].total_pacotes);
+                        myChart.update();
+                    } else {
+                        console.log("---------------------------------------------------------------");
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                        console.log("Horário do novo dado capturado:");
+                        console.log(novoRegistro[0].data_hora);
+                        console.log("Horário do último dado capturado:");
+                        console.log(dados.labels[dados.labels.length - 1]);
+                        console.log("---------------------------------------------------------------");
+                    }
+
+                    setTimeout(() => atualizarGraficoPacotes(idAgen, dados, myChart), 20000);
+                })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+                    setTimeout(() => atualizarGraficoPacotes(idAgen, dados, myChart), 20000);
+                });
+        }
+
+        function listarIPePacotes() {
+            fetch("/rede/listarIPePacotes", { cache: 'no-store' })
+                .then(function (resposta) {
+                    resposta.json().then(function (resposta) {
+                        console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                        var feed = document.getElementById("ip_recebido");
+                        feed.innerHTML = "";
+
+                        // Inicialize a variável trafegoAnormal dentro da função
+                        var trafegoAnormal = false;
+
+                        for (let contador_usuario = 0; contador_usuario < resposta.length; contador_usuario++) {
+                            var publicacao = resposta[contador_usuario];
+
+
+                            // Criando e manipulando elementos do HTML via JavaScript
+                            var usuario = document.createElement("li");
+
+                            var rede = document.createElement("div");
+
+                            var ip = document.createElement("p");
+                            ip.innerHTML = `${publicacao.IP}`;
+                            rede.appendChild(ip)
+
+                            var Hora = document.createElement("p");
+                            Hora.innerHTML = `${publicacao.hora}`;
+                            rede.appendChild(Hora)
+
+                            var Pacotes = document.createElement("p");
+                            Pacotes.innerHTML = `${publicacao.pacotesEnviados}`;
+                            rede.appendChild(Pacotes)
+
+                            // Verificando se o tráfego é anormal (mais de 100 pacotes)
+                            if (publicacao.pacotesEnviados > 100) {
+                                trafegoAnormal = true;
+                                rede.style.color = 'red';
+                            }
+
+                            feed.appendChild(rede);
+                        }
+
+                        // Mova esta parte para fora do loop para lidar com o tráfego anormal após processar todos os dados
+                        var trafego = document.getElementById("trafego");
+                        if (trafegoAnormal) {
+                            trafego.innerHTML = "Anormal";
+                            console.log('Tráfego anormal detectado! Faça alguma coisa.');
+                            // Adicione lógica adicional aqui para lidar com o tráfego anormal.
+                        } else {
+                            trafego.innerHTML = "Normal";
+                        }
+                    })
+                })
+                .catch(error => {
+                    console.error("Erro ao obter informações do servidor:", error);
+                    alert('Erro ao obter informações do servidor.');
+                });
+        }
+
+
+
+    </script>
+</body>
+
+</html>

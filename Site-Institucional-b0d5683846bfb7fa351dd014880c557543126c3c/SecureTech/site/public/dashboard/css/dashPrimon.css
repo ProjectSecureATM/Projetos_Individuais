@@ -1,0 +1,228 @@
+.textoBruno span{
+    color: black;
+    font-weight: bold;
+}
+
+.display-betwen{
+    display: flex;
+    justify-content: space-between;
+}
+
+.display-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.display-evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.display-left{
+    display: flex;
+    justify-content: left;
+}
+
+.display-right{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+
+.boxDashBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+}
+
+.dashBoard{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+}
+
+.containerDashComponentes{
+    height: auto;
+    width: 95%;
+
+}
+
+.tituloDashBoard{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15vh;
+
+}
+
+.titulo-DashBoard{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: auto;
+    width: 10%;
+}
+
+.divTitulo{
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    height: 7vh;
+    width: 100%;
+    justify-content: left;
+    align-items: end;
+}
+
+.titulo-end{
+    display: flex;
+    align-items: end;
+}
+
+.titulo-center{
+    display: flex;
+    align-items: center;
+}
+
+.titulo span{
+    color: #021e46;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.titulo-DashBoard{
+    width: 18%;
+}
+
+.titulo-DashBoard span{
+    font-size: 36px;
+    color: black;
+    font-weight: bold;
+}
+
+.divButon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butonDashBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 7vw;
+    border-radius: 2rem;
+    background-color: #021e46;
+    
+}
+
+.butonDashBoard span{
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.divLinhaDash{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+
+    /* background-color: rgb(61, 135, 199); */
+}
+
+.divColunaDash{
+    display: flex;
+    flex-direction: column;
+    width:19.5vw;
+    height: 50vh;
+
+    /* background-color: rgb(62, 75, 86); */
+}
+
+.justify-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.boxDashComponentes{
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+    width: 43vh;
+
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+.boxDashComponentes2{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    width: 90vh;
+
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+.boxDashComponentes3{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    width: 70vh;
+
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: #fff;
+    background-color: rgb(255, 255, 255);
+
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+.conteudoComponente{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+
+}
+
+.componente{
+    height: auto;
+    width: auto;
+}
+
+.componente span{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+}
+
+.divLinhaDash2{
+    padding-top: 5vh;
+    /* background-color: #021e46; */
+}
+
+.divLinhaDash2{
+    padding-bottom: 21px;
+}

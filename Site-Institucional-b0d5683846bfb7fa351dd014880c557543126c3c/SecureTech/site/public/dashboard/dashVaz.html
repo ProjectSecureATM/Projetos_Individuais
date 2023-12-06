@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Rede</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/dashVaz.css" rel="stylesheet">
+
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon" style="width: 35%; height: 14vh;">
+                    <img class="imgLogoDash" src="../assets/logo Securu ATM.png" alt="">
+                </div>
+                <div class="sidebar-brand-text"> Secure ATM</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 espacamento">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="DashBoard-VisaoGeral.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/binoculars.png" alt="">
+                    <span>Visão Geral</span>
+                </a>
+                <a class="nav-link" href="dashGiba.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/dashboard amarelo.png" alt="">
+                    <span style="color: goldenrod; font-weight: bold;">Dashboard</span>
+                </a>
+                <a class="nav-link" href="DashBoard-AddATM.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/add_ATM.png" alt="">
+                    <span>Cadastrar ATM</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Inovações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inovações Secure ATM:</h6>
+                        <a href="dashVaz.html" class="collapse-item">Dash Gabroh</a>
+                        <a href="DashBoard-VisaoGeral-Giba.html" class="collapse-item">Desempenho Sistêmico</a>
+                        <a href="dashVisaoGeralRede_Julio.html" class="collapse-item">Segurança de Rede</a>
+                        <a href="DashBoard-VisaoGeral-Paulo.html" class="collapse-item">Dash Paulão</a>
+                        <a href="DashBoard-VisaoGeral-Primon.html" class="collapse-item">Dash Primon</a>
+                        <a class="collapse-item">Dash Alice</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button class="buttonNavBar">
+                        <a href="../homeDashBoard.html">Voltar para Agência</a>
+                    </button>
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bruno</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="boxDashBoard">
+                    <div class="dashBoard">
+                        <div class="tituloDashBoard">
+                            <div class="titulo-DashBoard">
+                                <span>Monitoramento de rede</span>
+                            </div>
+                            <!-- <div class="divButon">
+                                <button class="butonDashBoard">
+                                    <span>Ver mais</span>
+                                </button>
+                            </div> -->
+                        </div>
+
+                        <div class="divLinhaDash display-betwen">
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo">
+                                            <span>Ping</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span id="pingPercentage"></span>
+                                            <span>ms</span>
+                                        </div>
+                                    </div>
+                                    <div class="divMetricas display-betwen">
+                                        <div class="divTextoMetricas" id="statusPing">
+                                            <!-- <span id="statusPing">Instável</span> -->
+                                        </div>
+                                        <div class="divIconMetricas">
+                                            <img src="../assets/ponto-de-interrogacao-em-um-fundo-preto-circular.png"
+                                                alt="" onclick="metricasPing()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo">
+                                            <span>Download</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span id="downloadPercentage"></span>
+                                            <span>Mbps</span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="divMetricas display-betwen">
+                                        <div class="divTextoMetricas" id="statusDownload">
+                                        
+                                        </div>
+                                        <div class="divIconMetricas">
+                                            <img src="../assets/ponto-de-interrogacao-em-um-fundo-preto-circular.png"
+                                                alt="" onclick="metricasDownload()">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="boxDashComponentes">
+                                <div class="containerDashComponentes">
+                                    <div class="divTitulo">
+                                        <div class="titulo titulo-end">
+                                            <span>Upload</span>
+                                        </div>
+                                    </div>
+                                    <div class="conteudoComponente">
+                                        <div class="componente">
+                                            <span id="uploadPercentage"></span>
+                                            <span>Mbps</span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="divMetricas display-betwen">
+                                        <div class="divTextoMetricas" id="statusUpload">
+                                    
+                                        </div>
+                                        <div class="divIconMetricas">
+                                            <img src="../assets/ponto-de-interrogacao-em-um-fundo-preto-circular.png"
+                                                alt="" onclick="metricasUpload()">
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divLinhaDash">
+                            <div class="divColunaDash baixo">
+                                <div class="boxTimer">
+                                    <div class="containerDashComponentes">
+                                        <div class="divTimer">
+                                            <div class="divTitulo">
+                                                <div class="titulo">
+                                                    <span>Horas de Funcionamento</span>
+                                                </div>
+                                            </div>
+                                            <div class="divTimer">
+                                                <div class="timer">
+                                                    <p id="tempoAtividade"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="boxGrafico">
+                                <div class="grafico">
+                                    <div class="containerDashComponentes">
+                                        <div class="divTitulo">
+                                            <div class="titulo titulo-center">
+                                                <span>Variedade Download e Upload</span>
+                                            </div>
+                                        </div>
+                                        <div class="divGrafico">
+                                            <div class="chart-area">
+                                                <canvas id="myChartRede"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; programdor: Gabriel Vaz - SpTech 2023</span>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Certeza que você quer sair?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione "Sair" para deslogar.</div>
+                <div class="modal-footer">
+                    <button style="text-align: left;" class="btn btn-secondary" type="button"
+                        data-dismiss="modal">Cancelar</button>
+                    <a class="btn btn-primary" href="../index.html">Sair</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+<script>
+
+    // Metricas - começo
+    function metricasPing() {
+        Swal.fire({
+            icon: "warning",
+            width: 550,
+            title: "Atenção!!",
+            html: `
+        <b>Métricas sobre o Ping</b></br></br>
+        Se seu ping estiver abaixo de 50 ele está em estado <span style="color: rgb(0, 86, 0);">Instável</span></br>
+        Se seu ping estiver entre 50 e 100 ele está em estado <span style="color: goldenrod">Alerta</span></br>
+        Se seu ping estiver maior de 100 ele está em estado <span style="color: rgb(158, 1, 1)">Crítico</span>
+            `,
+        });
+    }
+
+    function metricasDownload() {
+        Swal.fire({
+            icon: "warning",
+            width: 550,
+            title: "Atenção!!",
+            html: `
+            <b>Métricas sobre o Download</b></br></br>
+            Se seu ping estiver abaixo de x ele está em estado <span style="color: rgb(0, 86, 0);">Instável</span></br>
+            Se seu ping estiver entre x e y ele está em estado <span style="color: goldenrod">Alerta</span></br>
+            Se seu ping estiver maior de x ele está em estado <span style="color: rgb(158, 1, 1)">Crítico</span>
+            `,
+        });
+    }
+
+    function metricasUpload() {
+        Swal.fire({
+            icon: "warning",
+            width: 550,
+            title: "Atenção!!",
+            html: `
+            <b>Métricas sobre o Upload</b></br></br>
+            Se seu ping estiver abaixo de x ele está em estado <span style="color: rgb(0, 86, 0);">Instável</span></br>
+            Se seu ping estiver entre x e y ele está em estado <span style="color: goldenrod">Alerta</span></br>
+            Se seu ping estiver maior de x ele está em estado <span style="color: rgb(158, 1, 1)">Crítico</span>
+
+            `,
+
+        });
+    }
+    // METRICAS - FINAL
+
+    function alertaAlerta() {
+        const UPLOAD = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            width: 550,
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: false,
+            didOpen: (UPLOAD) => {
+                UPLOAD.onmouseenter = Swal.stopTimer;
+                UPLOAD.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        UPLOAD.fire({
+            icon: "warning",
+            title: "Alerta, componentes da rede estão em alerta"
+        });
+    }
+
+    function alertaCritico() {
+        const UPLOAD = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            width: 550,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: false,
+            didOpen: (UPLOAD) => {
+                UPLOAD.onmouseenter = Swal.stopTimer;
+                UPLOAD.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        UPLOAD.fire({
+            icon: "error",
+            title: "COMPONENTES REDE ESTÃO EM ESTADO CRÍTICO!!!!"
+        });
+    }
+
+
+
+
+
+
+
+    var idATM = sessionStorage.getItem('idATM');
+    window.onload = function () {
+        if (idATM) {
+            exibirStatusRede(idATM);
+            mostrarVariedade(idATM);
+            tempoAtividadeEIP(idATM);
+            // obterMedidasRede(idATM);
+            buscarMedidasRede(idATM);
+        } else {
+            console.error('idATM não está definido.');
+        }
+    };
+
+    function exibirStatusRede(idATM) {
+        obterDadosRede(idATM);
+        setInterval(function () {
+            obterDadosRede(idATM);
+        }, 2000);
+
+    }
+
+    function tempoAtividadeEIP(idATM) {
+        obterTempoAtv(idATM);
+        setInterval(function () {
+            obterTempoAtv(idATM);
+        }, 2000);
+        obterIP(idATM);
+        setInterval(function () {
+            obterIP(idATM)
+        }, 2000)
+    }
+
+    function obterDadosRede(idATM) {
+        var statusPing = document.getElementById('statusPing')
+        var statusDownlaod = document.getElementById('statusDownload')
+        var statusUpload = document.getElementById('statusUpload')
+
+        fetch(`/usuarios/obterMetricasRede/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                atualizarValorDOM('pingPercentage', dados.PING);
+                atualizarValorDOM('downloadPercentage', dados.DOWNLOAD);
+                atualizarValorDOM('uploadPercentage', dados.UPLOAD);
+
+                if (dados.PING <= 50) {
+                    statusPing.innerHTML = `
+                    <span style="color: rgb(0, 86, 0);">Instável</span>
+                    `
+                } else if (dados.PING > 50 && dados.PING <= 100) {
+                    statusPing.innerHTML = `
+                    <span style="color: goldenrod">Alerta</span>
+                    `
+
+                    alertaAlerta()
+                } else if (dados.PING > 100) {
+                    statusPing.innerHTML = `
+                    <span style="color: rgb(158, 1, 1)">Crítico</span>
+                    `
+
+                    alertaCritico()
+                }
+
+                if (dados.DOWNLOAD <= 50) {
+                    statusDownlaod.innerHTML = `
+                    <span style="color: rgb(0, 86, 0);">Instável</span>
+                    `
+                } else if (dados.DOWNLOAD > 50 && dados.DOWNLOAD <= 100) {
+                    statusDownlaod.innerHTML = `
+                    <span style="color: goldenrod">Alerta</span>
+                    `
+
+                    alertaAlerta()
+                } else if (dados.DOWNLOAD > 100) {
+                    statusDownlaod.innerHTML = `
+                    <span style="color: rgb(158, 1, 1)">Crítico</span>
+                    `
+
+                    alertaCritico()
+                }
+
+                if (dados.UPLOAD <= 50) {
+                    statusUpload.innerHTML = `
+                    <span style="color: rgb(0, 86, 0);">Instável</span>
+                    `
+                } else if (dados.UPLOAD > 50 && dados.UPLOAD <= 100) {
+                    statusUpload.innerHTML = `
+                    <span style="color: goldenrod">Alerta</span>
+                    `
+
+                    alertaAlerta()
+                } else if (dados.UPLOAD > 100) {
+                    statusUpload.innerHTML = `
+                    <span style="color: rgb(158, 1, 1)">Crítico</span>
+                    `
+
+                    alertaCritico()
+                }
+
+
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção de REDE do sistema: ${error.message}`);
+            });
+
+
+
+    }
+
+    function atualizarValorDOM(elementID, valor) {
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    function mostrarVariedade(idATM) {
+        fetch(`/usuarios/VariedadeHora/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                plotarGrafico(resposta, idATM);
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+    }
+
+    function obterTempoAtv(idATM) {
+        fetch(`/usuarios/obterTempoAtv/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM2('tempoAtividade', dados.TEMPO)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM2(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    function obterIP(idATM) {
+        fetch(`/usuarios/obterIP/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM3('IPAtm', dados.IP)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM3(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+
+
+
+    // GRAFICO
+    function buscarMedidasRede(idATM) {
+        var idATM = sessionStorage.idATM
+
+
+        fetch(`/usuarios/tempo-medidasRede/${idATM}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGraficoRede(resposta, idATM);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+
+    function plotarGraficoRede(resposta, idATM) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        let labels = [];
+
+        let dados = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Upload',
+                    color: 'white',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#ff0000   ',
+                    borderColor: '#ff0000   ',
+                    fontColor: 'white',
+                    borderWidth: 1,
+                    tension: 0.5
+                },
+                {
+                    label: 'Download',
+                    color: 'white',
+                    data: [],
+                    fill: false,
+                    backgroundColor: '#021e46   ',
+                    borderColor: '#021e46   ',
+                    fontColor: 'white',
+                    borderWidth: 1,
+                    tension: 0.5
+                }
+            ]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.dataHora);
+            dados.datasets[0].data.push(registro.pacotesEnviados);
+            dados.datasets[1].data.push(registro.pacotesRecebidos);
+        }
+
+        const opcoes = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#021e46',
+                        fontStyle: 'bold' // Cor da fonte da label
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: 'black' // Cor da fonte no eixo X
+                    },
+                },
+                x: {
+                    beginAtZero: true,
+                    display: false,
+                    ticks: {
+                        color: 'white' // Cor da fonte no eixo X
+                    },
+                }
+            }
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        const config = {
+            type: 'line',
+            data: dados,
+            options: opcoes
+        };
+
+        let myChart3 = new Chart(
+            document.getElementById("myChartRede"),
+            config
+        );
+
+        window.addEventListener('resize', function () {
+            containerWidth = chartContainer.clientWidth;
+            myChart.canvas.width = containerWidth;
+            myChart.update();
+        });
+
+        // Obtém a largura da div que contém o gráfico
+        let chartContainer = document.getElementById(`myChartRede`);
+        let containerWidth = chartContainer.clientWidth;
+
+        // Ajusta a largura do canvas para a largura da div
+        config.options = {
+            maintainAspectRatio: false,
+            responsive: true
+        };
+
+        setTimeout(() => atualizarGraficoRede(idATM, dados, myChart3), 2000);
+    }
+
+    function atualizarGraficoRede(idATM, dados, myChart3) {
+
+        fetch(`/usuarios/atualizarGraficosRede/${idATM}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                console.log("papai socoro AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log("Dados atuais do gráfico:");
+                    console.log(dados);
+                    if (novoRegistro[0].dataHora == dados.labels[dados.labels.length]) {
+                        console.log("---------------------------------------------------------------")
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                        console.log("Horário do novo dado capturado:")
+                        console.log(novoRegistro[0].dataHora)
+                        console.log(novoRegistro[0].pacotesEnviados)
+                        console.log(novoRegistro[1].pacotesRecebidos)
+                        console.log("Horário do último dado capturado:")
+                        console.log(dados.labels[dados.labels.length])
+                        console.log("---------------------------------------------------------------")
+                    } else {
+                        dados.labels.shift();
+                        dados.labels.push(novoRegistro[0].dataHora);
+
+                        dados.datasets[0].data.shift();
+                        dados.datasets[0].data.push(novoRegistro[0].pacotesEnviados);
+                        dados.datasets[1].data.push(novoRegistro[1].pacotesRecebidos);
+
+
+                        myChart3.update();
+                    }
+
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+
+            }
+        })
+            .catch(function
+                (error) {
+                console.error("Erro na obtenção dos dados p / gráfico: ${ error.message }");
+            });
+
+    }
+
+
+
+    // var myChart = null;
+    // var isChartDestroyed = true;
+
+    // function plotarGrafico(resposta, idATM) {
+
+    // Criando estrutura para plotar gráfico - labels
+    // let labels = [];
+
+    // Criando estrutura para plotar gráfico - dados
+    // let dados = {
+    //     labels: labels,
+    //     datasets: [
+    //         {
+    //             label: 'Upload',
+    //             data: [],
+    //             backgroundColor: '#bde5e4',
+    //             borderColor: '#26ABA7',
+    //             tension: 0.1
+    //         },
+    //         {
+    //             label: 'Download',
+    //             data: [],
+    //             backgroundColor: '#b7cef1',
+    //             borderColor: '#115ED2',
+    //             tension: 0.1
+    //         }
+    //     ]
+    // };
+
+    // let options = {
+    //     plugins: {
+    //         title: {
+    //             display: true,
+    //         }
+    //     },
+    // };
+
+    // Inserindo valores recebidos em estrutura para plotar o gráfico
+    // for (i = resposta.length - 1; i >= 0; i--) {
+    //     var registro = resposta[i];
+    //     labels.push(registro.dataHora);
+    //     dados.datasets[0].data.push(registro.pacotesEnviados);
+    //     dados.datasets[1].data.push(registro.pacotesRecebidos);
+
+    //     console.log(`MACACO: Upload=${registro.pacotesEnviados}, Download=${registro.pacotesRecebidos}`);
+    //     console.log(`MACACO: data=${registro.dataHora}`);
+    // }
+
+    // Criando estrutura para plotar gráfico - config
+    // const config = {
+    //     type: 'line',
+    //     data: dados,
+    //     options: options
+    // };
+
+    // Obtém a largura da div que contém o gráfico
+    // let chartContainer = document.getElementById(`myChartRede`);
+    // let containerWidth = chartContainer.clientWidth;
+
+    // Ajusta a largura do canvas para a largura da div
+    // config.options = {
+    //     maintainAspectRatio: false,
+    //     responsive: true
+    // };
+
+    // Adicionando gráfico criado em div na tela
+    // let myChart = new Chart(
+    //     document.getElementById(`myChartRede`),
+    //     config
+    // );
+
+    // window.addEventListener('resize', function () {
+    //     containerWidth = chartContainer.clientWidth;
+    //     myChart.canvas.width = containerWidth;
+    //     myChart.update();
+    // });
+
+    // Supondo que myChart seja a referência ao seu gráfico existente
+    // if (myChart) {
+    //     myChart.destroy();
+    // }
+
+    // Restante do seu código de criação do gráfico
+    // var ctx = document.getElementById('myChartRede').getContext('2d');
+    // myChart = new Chart(ctx, {
+    //     // Opções de configuração do gráfico
+    // });
+
+    // Verificar se o gráfico anterior foi destruído
+    // if (!isChartDestroyed) {
+    //     // Aguarde a destruição completa do gráfico
+    //     setTimeout(plotarGrafico, 100);
+    //     return;
+    // }
+
+    // Restante do seu código de criação do gráfico
+    // var ctx = document.getElementById('myChart3').getContext('2d');
+    // myChart = new Chart(ctx, {
+    // Opções de configuração do gráfico
+    // });
+
+    // Atualizar variável de controle
+    // isChartDestroyed = false;
+
+
+    // setTimeout(() => atualizarGraficoRede(idATM, resposta, myChartRede), 2000);
+
+    // }
+
+    //     function destruirGrafico() {
+    //     if (myChart) {
+    //         myChart.destroy();
+    //         isChartDestroyed = true;
+    //     }
+    // }
+
+    // function atualizarGraficoRede(resposta, idATM, myChartRede) {
+    //     fetch(`/usuarios/atualizarGraficosRede/ ${idATM}`, {cache:'no-store'}).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (novoRegistro) {
+
+    //                 if (novoRegistro[0].momento_grafico == resposta.labels[resposta.labels.length]) {
+    //                     console.log("---------------------------------------------------------------")
+    //                     console.log("Como não há resposta novos para captura, o gráfico não atualizará.")
+    //                     console.log("Horário do novo dado capturado:")
+    //                     console.log(novoRegistro[0].porcentagem)
+    //                     console.log("Horário do último dado capturado:")
+    //                     console.log(resposta.labels[resposta.labels.length])
+    //                     console.log("---------------------------------------------------------------")
+    //                 } else {
+    //                     // tirando e colocando valores no gráfico
+    //                     resposta.labels.shift(); // apagar o primeiro
+    //                     resposta.labels.push(novoRegistro[0].dataHora); // incluir um novo momento
+
+    //                     resposta.datasets[0].data.shift();  // apagar o primeiro de umidade
+    //                     resposta.datasets[0].data.push(novoRegistro[0].pacotesEnviados); // incluir uma nova medida de umidade
+    //                     resposta.datasets[1].data.push(novoRegistro[1].pacotesRecebidos);
+
+    //                     myChartRede.update();
+    //                 }
+    //             });
+    //         } else {
+    //             console.error('Nenhum dado encontrado ou erro na API');
+
+    //         }
+    //     })
+    //         .catch(function
+    //             (error) {
+    //             console.error(`Erro na obtenção dos resposta p / gráfico: ${ error.message }`);
+    //         });
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

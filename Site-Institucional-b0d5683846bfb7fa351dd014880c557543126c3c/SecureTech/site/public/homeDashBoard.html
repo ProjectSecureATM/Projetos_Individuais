@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureATM | Home do Usuário </title>
+  <script src="./js/sessao.js"></script>
+  <script src="./js/crudsAgenciaECadastro.js"></script>
+
+  <link rel="stylesheet" href="css/chatBot.css">
+  <link rel="stylesheet" href="css/homeCadastrado.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Fira+Sans:wght@300&family=Readex+Pro&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./assets/fiveicon.png" type="image/x-icon">
+
+</head>
+
+<body>
+  <header> <!-- principal -->
+    <div class="NavBar">
+      <div class="container-navBar">
+        <div class="divNavBar">
+          <div class="divImgNavBar">
+            <img src="assets/secure_atm_logo.png" alt="">
+          </div>
+          <div class="conteudoNavBar">
+            <div class="divTexto">
+
+              <span>
+                <a href="homeDashBoard.html" id="spanPag">Agência</a>
+              </span>
+            </div>
+            <div class="divTexto">
+              <span>
+                <a href="homeDashBoardCadas.AG.html">Cadastrar Agência</a>
+              </span>
+            </div>
+
+            <div class="divTexto">
+              <span>
+                <a href="homeDashBoardCadas.Fun.html">Cadastrar Usuário</a>
+              </span>
+            </div>
+          </div>
+          <div onclick="limparSessao()" class="botao-login">
+            <button id="login-home" onclick="limparSessao()">Logout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+
+      <div class="banner"> <!-- Banner Home -->
+        <div class="container">
+          <div class="bd-img-banner">
+          </div>
+          <div class="titulo">
+            <div class="text-titulo">
+              <h1>Bem-Vindo</h1>
+              <h1><span>Novamente!</span></h1>
+              <p>Essa tela é destinada a você,
+                <span id="id_nome_usuario"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Inicio Agências -->
+
+  <div class="boxDivTitulo">
+    <div class="containerConteudo">
+      <div class="divTitulo">
+        <span>
+          Essas são suas agências cadastradas
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divAgencia">
+    <div class="containerConteudo">
+
+      <div class="divTituloAgencia">
+        <a>São Paulo - SP</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="divLinhaCard" id="divLinhaCard">
+
+  </div>
+
+</body>
+<!-- Fim Agências -->
+
+<!-- Inicio Rodapé -->
+<!-- Fim Rodapé -->
+<script>
+  function goToDashBoard(idAgen) {
+    sessionStorage.idAgen = idAgen
+    window.location = "./dashboard/DashBoard-VisaoGeral.html"
+  }
+
+  window.onload = buscarAgencia();
+
+  var usuario = document.querySelector("#id_nome_usuario")
+  var nomeUsuario = sessionStorage.getItem("nome_usuario")
+  usuario.innerHTML = nomeUsuario
+
+
+  function buscarAgencia() {
+
+    var fkAgencia_usuario = sessionStorage.fkAgencia_usuario;
+
+    fetch("/usuarios/listarAgencia", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fkagenciaServer: fkAgencia_usuario
+      })
+    }).then(function (resposta) {
+
+      if (resposta.ok) {
+
+        var feed = document.getElementById("divLinhaCard");
+        feed.innerHTML = ""
+
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+          for (let i = 0; i < resposta.length; i++) {
+            var publicacao = resposta[i];
+
+            var box = document.createElement("div");
+            box.className = "divBoxCard";
+            feed.appendChild(box);
+
+            var card = document.createElement("div");
+            card.className = "buttonCard";
+            card.setAttribute("onclick", `goToDashBoard(${publicacao.idAgen})`);
+
+            var divFormat = document.createElement("div");
+
+            box.appendChild(card);
+
+            var span = document.createElement("span");
+            span.innerHTML = `Agência ${publicacao.nAgencia}`;
+            divFormat.appendChild(span);
+
+            card.appendChild(divFormat);
+
+            var numeroagencia = document.createElement("div");
+            numeroagencia.className = "divNumeroAgencia";
+
+            var span2 = document.createElement("span");
+            span2.innerHTML = publicacao.idAgen;
+            card.appendChild(numeroagencia);
+
+          }
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+    });
+  }
+
+
+  function limparSessao() {
+    sessionStorage.clear();
+    window.location = "login.html";
+  }
+
+  function addAgen() {
+    document.getElementById("AddAgencia").style.display = "nosne";
+  }
+
+
+
+</script>

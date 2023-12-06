@@ -1,0 +1,14 @@
+#!/bin/bash
+java -version #verificação de versão Java
+if [ $? = 0 ];  #verificação da existencia de java(se retorno 0)
+	then 
+		echo “java instalado” #echo expõe em terminal
+	else
+		echo “java não instalado” 
+		echo “gostaria de instalar o java? [s/n]” 
+		read get #veriavel com valor preenchido em terminal 
+	if [ \“$get\” == \“s\” ];
+		then
+		sudo apt install openjdk-17-jre -y # instalação 
+	fi 
+fi 

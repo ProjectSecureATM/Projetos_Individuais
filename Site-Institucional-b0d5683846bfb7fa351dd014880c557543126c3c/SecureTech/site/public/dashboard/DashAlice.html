@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+
+    <title>Dashboard/ Monitoramento de Logs de Autenticação</title>
+
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/dashAlice.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+</head>
+
+<body id="page-top">
+
+    <div id="wrapper">
+
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+ 
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <div class="sidebar-brand-icon" style="width: 35%; height: 14vh;">
+                    <img class="imgLogoDash" src="../assets/logo Securu ATM.png" alt="">
+                </div>
+                <div class="sidebar-brand-text"> Secure ATM</div>
+            </a>
+
+            <hr class="sidebar-divider my-0 espacamento">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="DashBoard-VisaoGeral.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/binoculars.png" alt="">
+                    <span>Visão Geral</span>
+                </a>
+                <a class="nav-link" href="DashAlice.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/dashboard amarelo.png" alt="">
+                    <span style="color: goldenrod; font-weight: bold;">Dashboard</span>
+                </a>
+                <a class="nav-link" href="DashBoard-AddATM.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/add_ATM.png" alt="">
+                    <span>Cadastrar ATM</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Inovações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inovações Secure ATM:</h6>
+                        <a href="DashBoard-VisaoGeral-Vaz.html" class="collapse-item">Dash Rede</a>
+                        <a href="DashBoard-VisaoGeral-Giba.html" class="collapse-item">Desempenho Sistêmico</a>
+                        <a href="dashVisaoGeralRede_Julio.html" class="collapse-item">Dash Segurança de Rede</a>
+                        <a href="DashBoard-VisaoGeral-Paulo.html" class="collapse-item">Dash Paulo</a>
+                        <a href="DashBoard-VisaoGeral-Primon.html" class="collapse-item">Dash USB</a>
+                        <a href="DashBoard-VisaoGeral-Alice.html" class="collapse-item">Dash Log</a>
+                    </div>
+                </div>
+
+            </li>
+
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+     
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <div id="content">
+
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                  
+                    <button class="buttonNavBar">
+                        <a href="../homeDashBoard.html">Voltar para Agência</a>
+                    </button>
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bruno</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                
+
+                <div id="boxDashBoard">
+                    <div id="dashBoard">
+                        <div id="tituloDashBoard">
+                            <div id="tituloDashboard">
+                                <span>DashBoard</span>
+                                <div id="informacao">
+                                    <div id="iconeInformacao" onclick="metricasLog()">
+                                        <img id = "imgInformação" src="../assets/information.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="divLinhaDash display-betwen">
+                            <div id="boxDashComponente">
+                                <div id="containerDashComponentes">
+                                    <div id="divTitulo">
+                                        <div id="titulo">
+                                            <span>Total de Logs por Dia</span>
+                                        </div>
+                                    </div>
+                                    <div id="conteudoComponente">
+                                        <div id="componente">
+                                            <canvas id="totalLogsDia"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="boxDashComponente">
+                                <div id="containerDashComponentes">
+                                    <div id="divTitulo">
+                                        <div id="titulo">
+                                            <span>Quantidade de Logs/ hora</span>
+                                        </div>
+                                    </div>
+                                    <div id="conteudoComponente">
+                                        <div id="componente">
+                                            <canvas id="qtdLogsHora"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="boxDashComponente">
+                                <div id="containerDashComponentes">
+                                    <div id="divTitulo">
+                                        <div id="titulo titulo-end">
+                                            <span>ATM com mais Erro</span>
+                                        </div>
+                                    </div>
+                                    <div id="conteudoComponente">
+                                        <div id="componente">
+                                            <span id="atmErro"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="divLinhaDash2 display-betwen">
+
+                            <div id="boxDashGrafico">
+                                <div id="containerDashComponentes">
+                                    <div id="divTitulo">
+                                        <div id="titulo titulo-end">
+                                            <span>Logs em Tempo Real</span>
+                                        </div>
+                                    </div>
+                                    <div id="conteudoComponente">
+                                        <div id="componente">
+                                            <canvas id="graficoLogsTempoReal"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="boxDashGraficoBarra">
+                                <div id="containerDashComponentes">
+                                    <div id="divTitulo">
+                                        <div id="titulo titulo-end">
+                                            <span>Comparativo entre Logs Bem e Mal Sucedidos</span>
+                                        </div>
+                                    </div>
+                                    <div id="conteudoComponente">
+                                        <div id="componente">
+                                            <canvas id="graficoComparacao"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scroll to Top Button-->
+                <a id="scroll-to-top rounded" href="#page-top">
+                    <i id="fas fa-angle-up"></i>
+                </a>
+
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Certeza que você quer sair?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true"></span>
+                                </button>
+                            </div>
+                            <div class="modal-body">Selecione "Sair" para deslogar.</div>
+                            <div class="modal-footer">
+                                <button style="text-align: left;" class="btn btn-secondary" type="button"
+                                    data-dismiss="modal">Cancelar</button>
+                                <a class="btn btn-primary" href="../index.html">Sair</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- pop up sweet alert -->
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                <!-- Bootstrap core JavaScript-->
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+                <!-- Core plugin JavaScript-->
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+                <!-- Custom scripts for all pages-->
+                <script src="js/sb-admin-2.min.js"></script>
+
+                <!-- Page level plugins -->
+                <script src="vendor/chart.js/Chart.min.js"></script>
+
+                <!-- Page level custom scripts -->
+                <script src="js/demo/chart-area-demo.js"></script>
+                <script src="js/demo/chart-pie-demo.js"></script>
+                <script src="js/demo/chart-bar-demo.js"></script>
+
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+    window.onload = obterDadosComparacao()
+
+    var idATM = 1
+    //sessionStorage.getItem('idATM');
+    // window.onload = function () {
+    //     if (idATM) {
+    //         exibirStatusSistema(idATM);
+    //         mostrarProcesso(idATM);
+    //     } else {
+    //         console.error('idATM não está definido.');
+    //     }
+    // };
+
+    function exibirStatusSistema(idATM) {
+        obterDadosSistema(idATM);
+        setInterval(function () {
+            obterDadosSistema(idATM);
+        }, 1000);
+    }
+
+    function metricasLog() {
+        Swal.fire({
+            title: 'Métricas Logs</br></br><p style="text-align: left;">Ideal: 0 a 10 Logs </br></br> Aceitável: 10 a 25 Logs </br></br> Crítico: + de 25 Logs </p></br><span style="color: blue;">As métricas se referem a tentativas e Autenticação com o mesmo usuário.</span',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+    }
+
+    // function obterDadosKPIS(idATM) {
+    //     obterDadosComparacao(idATM),
+    //     setInterval(function () {
+    //         obterDadosComparacao(idATM);
+    //     }, 2000);
+        
+    //     obterDadosMaxKpi(idATM),
+    //     setInterval(function () {
+    //         obterDadosMaxKpi(1);
+    //     }, 7000);
+
+    //     obterDadosMinKpi(idATM) 
+    //     setInterval(function () {
+    //         obterDadosMinKpi(idATM);
+    //     }, 7000);
+    // }
+
+    function obterDadosComparacao(idATM) {
+        var idATM = 1
+
+        fetch(`/alice/comparacaoLogsSucessoEFalha/${idATM}`, { cache: 'no-store' })
+        .then(function (response) {
+            if(response.ok){
+                response.json()
+                .then(function(resposta){
+                    console.log("Dados recebidos:",JSON.stringify(resposta))
+                    resposta.reverse()
+                    plotarGraficoComparacao(resposta, idATM)
+                })
+            }
+        })  
+
+    }
+
+    function plotarGraficoComparacao(resposta, idATM) {
+
+        let labels = [];
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Estresse',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 5,
+                tension: 0.5
+            }]
+        };
+
+
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            dados.datasets[0].data.push(registro.Valor);
+            labels.push(registro.DataRegistro)
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+
+        const config = {
+            type: 'bar',
+            data: dados
+        };
+
+        let myChart = new Chart(
+            document.getElementById(`EstresseChart`),
+            config
+        );
+        setTimeout(()=>atualizarGraficoComparacao(idATM, dados, myChart),2000)
+    }
+
+
+    function atualizarGraficoComparacao(idATM, dados, myChart) {
+        fetch(`/alice/buscarTempoReal/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (novoRegistro) {
+                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                console.log('Dados atuais do gráfico:');
+                console.log(dados);
+
+                if (novoRegistro.length > 0) {
+                    if (novoRegistro[0].DataRegistro != dados.labels[dados.labels.length - 1]) {
+                        dados.labels.push(novoRegistro[0].DataRegistro);
+                        dados.datasets[0].data.push(novoRegistro[0].Valor);
+                        myChart.update();
+                    } else {
+                        console.log("---------------------------------------------------------------");
+                        console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                        console.log("Horário do novo dado capturado:");
+                        console.log(novoRegistro[0].DataRegistro);
+                        console.log("Horário do último dado capturado:");
+                        console.log(dados.labels[dados.labels.length - 1]);
+                        console.log("---------------------------------------------------------------");
+                    }
+                }
+
+                // Chama a função recursivamente após 2 segundos
+                setTimeout(()=>atualizarGraficoComparacao(idATM, dados, myChart),2000)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+
+    }
+
+    // OUTRO GRÀFICO
+
+//     function obterDadosTempoReal(idATM) {
+
+// fetch(`/alice/logTempoReal/${idATM}`, { cache: 'no-store' })
+// .then(function (response) {
+//     if(response.ok){
+//         response.json()
+//         .then(function(resposta){
+//             console.log("Dados recebidos:",JSON.stringify(resposta))
+//             resposta.reverse()
+//             plotarGraficoTempoReal(resposta, idATM)
+//         })
+//     }
+// })  
+
+// }
+
+// function plotarGraficoTempoReal(resposta, idATM) {
+
+// let labels = [];
+// let dados = {
+//     labels: labels,
+//     datasets: [{
+//         label: 'Estresse',
+//         data: [],
+//         fill: false,
+//         backgroundColor: 'rgba(75, 192, 192, 0.2)',
+//         borderColor: 'rgba(75, 192, 192, 1)',
+//         borderWidth: 5,
+//         tension: 0.5
+//     }]
+// };
+
+
+// for (i = 0; i < resposta.length; i++) {
+//     var registro = resposta[i];
+//     dados.datasets[0].data.push(registro.Valor);
+//     labels.push(registro.DataRegistro)
+// }
+
+// console.log('----------------------------------------------')
+// console.log('O gráfico será plotado com os respectivos valores:')
+// console.log('Labels:')
+// console.log(labels)
+// console.log('Dados:')
+// console.log(dados.datasets)
+// console.log('----------------------------------------------')
+
+
+// const config = {
+//     type: 'bar',
+//     data: dados
+// };
+
+// let myChart = new Chart(
+//     document.getElementById(`EstresseChart`),
+//     config
+// );
+// setTimeout(()=>atualizarGraficoTempoReal(idATM, dados, myChart),2000)
+// }
+
+
+// function atualizarGraficoTempoReal(idATM, dados, myChart) {
+// fetch(`/alice/buscarTempoReal/${idATM}`, { cache: 'no-store' })
+//     .then(function (response) {
+//         if (response.ok) {
+//             return response.json();
+//         } else {
+//             console.error('Nenhum dado encontrado ou erro na API');
+//             return [];
+//         }
+//     })
+//     .then(function (novoRegistro) {
+//         console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+//         console.log('Dados atuais do gráfico:');
+//         console.log(dados);
+
+//         if (novoRegistro.length > 0) {
+//             if (novoRegistro[0].DataRegistro != dados.labels[dados.labels.length - 1]) {
+//                 dados.labels.push(novoRegistro[0].DataRegistro);
+//                 dados.datasets[0].data.push(novoRegistro[0].Valor);
+//                 myChart.update();
+//             } else {
+//                 console.log("---------------------------------------------------------------");
+//                 console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+//                 console.log("Horário do novo dado capturado:");
+//                 console.log(novoRegistro[0].DataRegistro);
+//                 console.log("Horário do último dado capturado:");
+//                 console.log(dados.labels[dados.labels.length - 1]);
+//                 console.log("---------------------------------------------------------------");
+//             }
+//         }
+
+//         // Chama a função recursivamente após 2 segundos
+//         setTimeout(()=>atualizarGraficoTempoReal(idATM, dados, myChart),2000)
+//     })
+//     .catch(function (error) {
+//         console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+//     });
+
+// }
+
+//     function obterDadosMaxKpi(idATM) {
+
+//         fetch(`/alice/buscarMaximo/${idATM}`, { cache: 'no-store' })
+//         .then(function (response) {
+//             if(response.ok){
+//                 response.json()
+//                 .then(function(resposta){
+
+//                     console.log("Dados recebidos:",JSON.stringify(resposta))
+                    
+//                     var kpi = document.getElementById("KPIpico");
+//                     kpi.innerHTML = "";
+//                     kpi.innerHTML = resposta[0].Valor;
+
+//                 })
+//             }
+//         })  
+
+//     }
+
+//     function obterDadosMinKpi(idATM) {
+
+//         fetch(`/alice/buscarMinimo/${idATM}`, { cache: 'no-store' })
+//         .then(function (response) {
+//             if(response.ok){
+//                 response.json()
+//                 .then(function(resposta){
+
+//                     console.log("Dados recebidos:",JSON.stringify(resposta))
+                    
+//                     var kpi = document.getElementById("KPIvale");
+//                     kpi.innerHTML = "";
+//                     kpi.innerHTML = resposta[0].Valor;
+
+//                 })
+//             }
+//         })  
+
+//     }
+</script>
+
+<!-- Selects as KPIs -->
+<!-- 
+
+-- Quantidade de logs por dia
+SELECT COUNT(idLogs) FROM logs WHERE DATE(data_hora) = CURDATE();
+
+-- ATM com mais erros
+SELECT ATM.idATM, COUNT(DISTINCT TipoERRO.idTipoERRO) AS quantidade_tipos_erros FROM ATM
+	JOIN logs ON ATM.idATM = logs.fk_idATM
+		JOIN mensagem ON logs.idLogs = mensagem.fkLogs
+			JOIN TipoERRO ON mensagem.idMensagem = TipoERRO.fkMSG
+				WHERE mensagem.Mensagem LIKE '%não%'
+					GROUP BY ATM.idATM
+						ORDER BY quantidade_tipos_erros DESC;
+                        
+-- Erros por hora 
+SELECT
+  DATE_FORMAT(logs.data_hora, '%d-%m-%Y %H:00:00') AS hora,
+		COUNT(*) AS quantidade_erros FROM logs
+			JOIN mensagem ON logs.idLogs = mensagem.fkLogs
+				WHERE mensagem.Mensagem LIKE '%não%'
+					GROUP BY hora
+					ORDER BY hora;
+ -->

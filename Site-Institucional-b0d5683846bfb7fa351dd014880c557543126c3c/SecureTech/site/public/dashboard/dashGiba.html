@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../assets/fiveicon.png" type="image/x-icon">
+
+    <title>Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Outros scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../js/notificar.js"></script>
+    <script src="../js/metricas.js"></script>
+    <!-- ... -->
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashGiba.css">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon" style="width: 35%; height: 14vh;">
+                    <img class="imgLogoDash" src="../assets/logo Securu ATM.png" alt="">
+                </div>
+                <div class="sidebar-brand-text"> Secure ATM</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0 espacamento">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="DashBoard-VisaoGeral.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/binoculars.png" alt="">
+                    <span>Visão Geral</span>
+                </a>
+                <a class="nav-link" href="dashGiba.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/dashboard amarelo.png" alt="">
+                    <span style="color: goldenrod; font-weight: bold;">Dashboard</span>
+                </a>
+                <a class="nav-link" href="DashBoard-AddATM.html">
+                    <img class="fas fa-fw fa-tachometer-alt" src="../assets/add_ATM.png" alt="">
+                    <span>Cadastrar ATM</span>
+                </a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Inovações</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inovações Secure ATM:</h6>
+                        <a href="dashVaz.html" class="collapse-item">Dash Gabroh</a>
+                        <a href="DashBoard-VisaoGeral-Giba.html" class="collapse-item">Desempenho Sistêmico</a>
+                        <a href="dashVisaoGeralRede_Julio.html" class="collapse-item">Segurança de Rede</a>
+                        <a href="DashBoard-VisaoGeral-Paulo.html" class="collapse-item">Dash Paulão</a>
+                        <a href="DashBoard-VisaoGeral-Primon.html" class="collapse-item">Dash Primon</a>
+                        <a class="collapse-item">Dash Alice</a>
+                    </div>
+                </div>
+            </li>
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button class="buttonNavBar">
+                        <a href="../homeDashBoard.html">Voltar para Agência</a>
+                    </button>
+
+                    <button id="metricas_desempenho" class="buttonNavBar" onclick="notificarATM2()">Métricas</button>
+                    <div id="modal2" class="modal2">
+                        <div class="modal-content2">
+                            <span id="closeteste" class="close2" onclick="closeModal2()">&times;</span>
+                            <div class="desempenho_content">
+                                <h5>DESEMPENHO</h5>
+
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>DESEMPENHO IDEAL</h6>
+                                        <p>100% a 80%</p>
+                                        <div id="bolas" class="bolaIdeal"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>DESEMPENHO MODERADO</h6>
+                                        <p>79% a 51%</p>
+                                        <div id="bolas" class="bolaModerada"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>DESEMPENHO CRÍTICO</h6>
+                                        <p>50% a 0%</p>
+                                        <div id="bolas" class="bolaCritica"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desempenho_content">
+                                <h5>TEMPERATURA</h5>
+
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>TEMPERATURA IDEAL</h6>
+                                        <p>0°C a 50°C</p>
+                                        <div id="bolas" class="bolaIdeal"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>TEMPERATURA MODERADA</h6>
+                                        <p>51°C a 69°C</p>
+                                        <div id="bolas" class="bolaModerada"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>TEMPERATURA CRÍTICA</h6>
+                                        <p>70°C ou mais</p>
+                                        <div id="bolas" class="bolaCritica"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desempenho_content">
+                                <h5>CPU</h5>
+
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO IDEAL</h6>
+                                        <p>0% a 39%</p>
+                                        <div id="bolas" class="bolaIdeal"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO MODERADO</h6>
+                                        <p>40% a 54%</p>
+                                        <div id="bolas" class="bolaModerada"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO CRÍTICO</h6>
+                                        <p>55% a 100%</p>
+                                        <div id="bolas" class="bolaCritica"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desempenho_content">
+                                <h5>RAM</h5>
+
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO IDEAL</h6>
+                                        <p>0% a 50%</p>
+                                        <div id="bolas" class="bolaIdeal"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO MODERADO</h6>
+                                        <p>51% a 79%</p>
+                                        <div id="bolas" class="bolaModerada"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO CRÍTICO</h6>
+                                        <p>80% a 100%</p>
+                                        <div id="bolas" class="bolaCritica"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desempenho_content">
+                                <h5>DISCO</h5>
+
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO IDEAL</h6>
+                                        <p>0% a 50%</p>
+                                        <div id="bolas" class="bolaIdeal"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO MODERADO</h6>
+                                        <p>51% a 79%</p>
+                                        <div id="bolas" class="bolaModerada"></div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="caixa-container">
+                                    <div class="caixa-desempenho">
+                                        <h6>USO CRÍTICO</h6>
+                                        <p>80% a 100%</p>
+                                        <div id="bolas" class="bolaCritica"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                                aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small"
+                                            placeholder="Search for..." aria-label="Search"
+                                            aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bruno</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div id="bloco" class="teste2">
+                        <br><br>
+                        <div class="card border-left-primary-kpi shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div id="borda"
+                                            class="text-xs font-weight-bold text-primary-kpi text-uppercase mb-1">
+                                            TEMPERATURA</div>
+                                        <span id="cpuTemp"></span>
+                                        <span id="percent">°C</span>
+                                        <div id="bolaMetrica" class="bola"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-left-primary-kpi shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div id="borda"
+                                            class="text-xs font-weight-bold text-primary-kpi text-uppercase mb-1">
+                                            CPU</div>
+                                        <span id="cpuPercentage"></span>
+                                        <span id="percent"><b>%</b></span>
+                                        <div id="bolaMetricaCPU" class="bola"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-left-primary-kpi shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div id="borda"
+                                            class="text-xs font-weight-bold text-primary-kpi text-uppercase mb-1">
+                                            RAM</div>
+                                        <span id="ramPercentage"></span>
+                                        <span id="percent"><b>%</b></span>
+                                        <div id="bolaMetricaRAM" class="bola"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="card border-left-primary-kpi shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-primary-kpi text-uppercase mb-1">
+                                            DISCO</div>
+                                        <span id="discoPercentage"></span>
+                                        <span id="percent"><b>%</b></span>
+                                        <div id="bolaMetricaDISCO" class="bola"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-8 col-lg-7">
+
+                        <!-- Card Body -->
+                        <div id="giba" class="card-body">
+                            <br>
+                            <div id="blocoKPI" class="col-xl-5 col-md-0 mb-8">
+                                <div class="chart-area">
+                                    <canvas id="CPUChart"></canvas>
+                                    <canvas id="TEMPChart"></canvas>
+                                </div>
+                                <div class="teste">
+                                    <br><br>
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div id="borda"
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        DESEMPENHO GERAL</div>
+                                                    <span id="desempenhoGeral"></span>
+                                                    <span id="percent">%</span>
+                                                    <div id="bolaMetricaDESEMPENHO" class="bola"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div id="desempenho" class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div
+                                                        class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        TEMPO DE ATIVIDADE</div>
+                                                    <span id="tempoAtividade"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="botao-reiniciar">
+                                <button id="openModalButton" onclick="notificarATM(), obterSelect()">NOTIFICAR ATM</button>
+                                <span id="botao"></span>
+                                <div class="texto-reiniciar">
+                                    <b>
+                                        <p>Aviso de Desempenho: Ação Recomendada</p>
+                                    </b>
+
+                                    <p>Prezado Cliente,</p>
+
+                                    <p>Detectamos que o desempenho da ATM está abaixo de 50%, indicando uma possível
+                                        questão operacional. Recomendamos que clique no botão "Notificar ATM" para
+                                        solicitar a assistência de um técnico.</p>
+
+                                    <p>Essa ação permitirá que nossa equipe técnica avalie e solucione qualquer
+                                        problema potencial. Agradecemos pela sua cooperação para garantir um serviço
+                                        contínuo e eficiente.
+
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <div id="modal1" class="modal1">
+                                <div class="modal-content1">
+                                    <span class="close1" onclick="closeModal()">&times;</span>
+                                    <p>Notificação enviada para o ATM com sucesso.</p>
+                                </div>
+                            </div>
+                            <a class="scroll-to-top rounded" href="#page-top">
+                                <i class="fas fa-angle-up"></i>
+                            </a>
+
+                            <!-- Logout Modal-->
+                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Certeza que você quer sair?
+                                            </h5>
+                                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">×</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">Selecione "Sair" para deslogar.</div>
+                                        <div class="modal-footer">
+                                            <button style="text-align: left;" class="btn btn-secondary" type="button"
+                                                data-dismiss="modal">Cancelar</button>
+                                            <a class="btn btn-primary" href="../index.html">Sair</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="../js/notificar.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var idATM = sessionStorage.getItem('idATM');
+
+    var metricaTemp = parseInt(document.getElementById('cpuTemp').innerText);
+
+    var bolaMetrica = document.getElementById('bolaMetrica');
+    var bolaMetricaRAM = document.getElementById('bolaMetricaRAM');
+    var bolaMetricaDISCO = document.getElementById('bolaMetricaDISCO');
+    var bolaMetricaCPU = document.getElementById('bolaMetricaCPU');
+    var bolaMetricaDESEMPENHO = document.getElementById('bolaMetricaDESEMPENHO');
+
+
+
+
+    function testeBotao() {
+        Swal.fire({
+            title: 'Métricas (KPI`s)</br></br><span style="color: blue;">CPU</span><p style="text-align: left;">Ideal: 0% a 50% </br> Aceitável: 50% a 70% </br> Crítico: 70% a 100%</p></br><span style="color: blue;">RAM</span><p style="text-align: left;">Ideal: 0% a 70% </br> Aceitável: 70% a 90% </br> Crítico: 90% a 100%</p></br><span style="color: blue;">DISCO</span><p style="text-align: left;">Ideal: 0% a 60% </br> Aceitável: 60% a 80% </br> Crítico: 80% a 100%</p>',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+        })
+    }
+
+    window.onload = function () {
+       if (idATM) {
+           mostrarTemp(idATM);
+           mostrarCPU(idATM);
+           obterDesempenhoETempoSistema(idATM);
+           obterBotaoSistema(idATM);
+           exibirStatusSistema(idATM);
+           cpuTemperatura(idATM);
+       } else {
+           console.error('idATM não está definido.');
+       }
+    };
+
+    function obterDesempenhoETempoSistema(idATM) {
+        obterDesempenho(idATM);
+        setInterval(function () {
+            obterDesempenho(idATM);
+        }, 2000);
+        obterTempoAtv(idATM);
+        setInterval(function () {
+            obterTempoAtv(idATM);
+        }, 2000);
+    }
+
+    function obterSelectBotao(idATM) {
+        obterSelect(idATM);
+        setInterval(function () {
+            obterSelect(idATM);
+        }, 2000);
+    }
+
+    function exibirStatusSistema(idATM) {
+        obterDadosSistema(idATM);
+        setInterval(function () {
+            obterDadosSistema(idATM);
+        }, 2000);
+        cpuTemperatura(idATM);
+        setInterval(function () {
+            cpuTemperatura(idATM);
+        }, 7000);
+    }
+
+    function obterSelect(idATM) {
+        fetch(`/usuarios/obterSelect/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM10(dados.SELECT)
+
+                if(dados.SELECT == 0){
+                    obterBotaoInsert()
+                }else{
+                    obterBotao()
+                }
+
+                console.log("sera que deu certo ? :(")
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM10(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    // function cpuTemperatura(idATM) {
+    //     fetch(`/usuarios/cpuTemperatura/${idATM}`, { cache: 'no-store' })
+    //         .then(function (resposta) {
+    //             if (resposta.ok) {
+    //                 return resposta.json();
+    //             } else {
+    //                 console.error('Erro ao obter dados do sistema');
+    //                 return {};
+    //             }
+    //         })
+    //         .then(function (dados) {
+    //             // Adicione logs para verificar os dados
+    //             console.log('Dados recebidos:', dados);
+    //             atualizarValorDOM8('cpuTemp', dados.TEMPERATURA)
+
+                
+    //         })
+    //         .catch(function (error) {
+    //             console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+    //         });
+    // }
+
+    function atualizarValorDOM8(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    function obterDadosSistema(idATM) {
+        fetch(`/usuarios/obterMetricasComponentes/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                atualizarValorDOM6('ramPercentage', dados.RAM);
+                atualizarValorDOM6('discoPercentage', dados.DISCO);
+                atualizarValorDOM6('cpuPercentage', dados.CPU);
+
+                if (dados.RAM >= 0 && dados.RAM <= 50.9) {
+                    bolaMetricaRAM.style.backgroundColor = 'green';
+                } else if (dados.RAM >= 51 && dados.RAM <= 79.9) {
+                    bolaMetricaRAM.style.backgroundColor = 'yellow';
+                } else if (dados.RAM >= 80 && dados.RAM <= 100) {
+                    bolaMetricaRAM.style.backgroundColor = 'rgb(160, 2, 2)';
+                }
+
+                if (dados.DISCO >= 0 && dados.DISCO <= 50.9) {
+                    bolaMetricaDISCO.style.backgroundColor = 'green';
+                } else if (dados.DISCO >= 51 && dados.DISCO <= 69.9) {
+                    bolaMetricaDISCO.style.backgroundColor = 'yellow';
+                } else if (dados.DISCO >= 70 && dados.DISCO <= 100) {
+                    bolaMetricaDISCO.style.backgroundColor = 'rgb(160, 2, 2)';
+                }
+
+                if (dados.CPU >= 0 && dados.CPU <= 39.9) {
+                    bolaMetricaCPU.style.backgroundColor = 'green';
+                } else if (dados.CPU >= 40 && dados.CPU <= 54.9) {
+                    bolaMetricaCPU.style.backgroundColor = 'yellow';
+                } else if (dados.CPU >= 55 && dados.CPU <= 100) {
+                    bolaMetricaCPU.style.backgroundColor = 'rgb(160, 2, 2)';
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+        // Adicione mais chamadas para as outras métricas (disco e CPU) se necessário
+    }
+
+    function atualizarValorDOM6(elementID, valor) {
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    function obterDesempenho(idATM) {
+        fetch(`/usuarios/obterDesempenho/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM('desempenhoGeral', dados[0].DesempenhoGeral)
+
+                if (dados[0].DesempenhoGeral >= 80 && dados[0].DesempenhoGeral <= 100) {
+                    bolaMetricaDESEMPENHO.style.backgroundColor = 'green';
+                } else if (dados[0].DesempenhoGeral >= 51 && dados[0].DesempenhoGeral <= 79.9) {
+                    bolaMetricaDESEMPENHO.style.backgroundColor = 'yellow';
+                } else if (dados[0].DesempenhoGeral >= 0 && dados[0].DesempenhoGeral <= 50.9) {
+                    bolaMetricaDESEMPENHO.style.backgroundColor = 'rgb(160, 2, 2)';
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+
+
+    function obterBotaoSistema(idATM) {
+        obterBotao(idATM);
+        obterBotaoInsert(idATM);
+    }
+
+    function obterBotaoInsert(idATM) {
+        fetch(`/usuarios/obterBotaoInsert/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM4('botao', dados.BOTAOINSERT)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM4(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+    function obterBotao(idATM) {
+        fetch(`/usuarios/obterBotao/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM3('botao', dados.BOTAO)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM3(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+    function obterTempoAtv(idATM) {
+        fetch(`/usuarios/obterTempoAtv/${idATM}`, { cache: 'no-store' })
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else {
+                    console.error('Erro ao obter dados do sistema');
+                    return {};
+                }
+            })
+            .then(function (dados) {
+                // Adicione logs para verificar os dados
+                console.log('Dados recebidos:', dados);
+                atualizarValorDOM2('tempoAtividade', dados[0].atividade)
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados do sistema: ${error.message}`);
+            });
+    }
+
+    function atualizarValorDOM2(elementID, valor) {
+        console.log(`Atualizando elemento ${elementID} com valor ${valor}`);
+        document.getElementById(elementID).textContent = valor;
+    }
+
+
+
+
+    function mostrarTemp(idATM) {
+        fetch(`/usuarios/TempHora/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                plotarGraficoTEMP(resposta, idATM);
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGraficoTEMP(resposta, idATM) {
+        let labels = [];
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Temperatura CPU',
+                color: 'white',
+                data: [],
+                fill: false,
+                backgroundColor: '#021e46   ',
+                borderColor: '#021e46   ',
+                fontColor: 'white',
+                borderWidth: 1,
+                tension: 0.5
+            }]
+        };
+
+        for (let i = 0; i < resposta.length; i++) {
+            let registro = resposta[i];
+            dados.datasets[0].data.push(registro.temp_cpu);
+            labels.push(registro.hora);
+        }
+
+        const opcoes = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#021e46',
+                        fontStyle: 'bold' // Cor da fonte da label
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: 'black' // Cor da fonte no eixo X
+                    },
+                },
+                x: {
+                    beginAtZero: true,
+                    display: false,
+                    ticks: {
+                        color: 'white' // Cor da fonte no eixo X
+                    },
+                }
+            }
+        }
+
+        const config = {
+            type: 'line',
+            data: dados,
+            options: opcoes
+        };
+
+        let myChart = new Chart(
+            document.getElementById(`TEMPChart`),
+            config
+        );
+        setTimeout(() => atualizarGraficoTEMP(idATM, dados, myChart), 2000);
+    }
+
+    function atualizarGraficoTEMP(idATM, dados, myChart) {
+        fetch(`/usuarios/TEMP_tempoReal/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (novoRegistro) {
+                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                console.log('Dados atuais do gráfico:');
+                console.log(dados);
+
+                let validacao = novoRegistro.some(item => item.hora === dados.labels[dados.labels.length - 1]);
+
+                if (!validacao) {
+                    dados.labels.pop();
+                    dados.datasets[0].data.pop();
+
+                    dados.labels.push(novoRegistro[0].hora);
+                    dados.datasets[0].data.push(novoRegistro[0].temp_cpu);
+                    cpuTemp.innerHTML = novoRegistro[0].temp_cpu
+                    myChart.update();
+                } else {
+                    console.log("---------------------------------------------------------------");
+                    console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                    console.log("Horário do novo dado capturado:");
+                    console.log(novoRegistro[0].hora);
+                    console.log("Horário do último dado capturado:");
+                    console.log(dados.labels[dados.labels.length - 1]);
+                    console.log("---------------------------------------------------------------");
+                }
+
+                if (novoRegistro[0].temp_cpu >= 0 && novoRegistro[0].temp_cpu <= 50) {
+                    bolaMetrica.style.backgroundColor = 'green';
+                } else if (novoRegistro[0].temp_cpu >= 51 && novoRegistro[0].temp_cpu <= 69) {
+                    bolaMetrica.style.backgroundColor = 'yellow';
+                } else if (novoRegistro[0].temp_cpu >= 70 && novoRegistro[0].temp_cpu <= 100) {
+                    bolaMetrica.style.backgroundColor = 'rgb(160, 2, 2)';
+                }
+
+                setTimeout(() => atualizarGraficoTEMP(idATM, dados, myChart), 2000);
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+                setTimeout(() => atualizarGraficoTEMP(idATM, dados, myChart), 2000);
+            });
+    }
+
+
+
+    function mostrarCPU(idATM) {
+        fetch(`/usuarios/CPUHora/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (resposta) {
+                console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                plotarGraficoCPU(resposta, idATM);
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGraficoCPU(resposta, idATM) {
+        let labels = [];
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'CPU%',
+                data: [],
+                fill: false,
+                backgroundColor: '#021e46',
+                borderColor: '#01142e',
+                borderWidth: 1
+            }]
+        };
+
+        for (let i = 0; i < resposta.length; i++) {
+            let registro = resposta[i];
+            dados.datasets[0].data.push(registro.quantidade);
+            labels.push(registro.hora);
+        }
+
+        const opcoes = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#021e46',
+                        fontStyle: 'bold' // Cor da fonte da label
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: 'black' // Cor da fonte no eixo X
+                    },
+                },
+                x: {
+                    beginAtZero: true,
+                    display: false,
+                    ticks: {
+                        color: 'white' // Cor da fonte no eixo X
+                    },
+                }
+            }
+        }
+
+        const config = {
+            type: 'line',
+            data: dados,
+            options: opcoes
+        };
+
+        let myChart = new Chart(
+            document.getElementById(`CPUChart`),
+            config
+        );
+        setTimeout(() => atualizarGraficoCPU(idATM, dados, myChart), 2000);
+    }
+
+    function atualizarGraficoCPU(idATM, dados, myChart) {
+        fetch(`/usuarios/CPU_tempoReal/${idATM}`, { cache: 'no-store' })
+            .then(function (response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    return [];
+                }
+            })
+            .then(function (novoRegistro) {
+                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                console.log('Dados atuais do gráfico:');
+                console.log(dados);
+
+                let validacao = novoRegistro.some(item => item.hora === dados.labels[dados.labels.length - 1]);
+
+                if (!validacao) {
+
+                    dados.labels.pop();
+                    dados.datasets[0].data.pop();
+
+                    dados.labels.push(novoRegistro[0].hora);
+                    dados.datasets[0].data.push(novoRegistro[0].quantidade);
+                    myChart.update();
+                } else {
+                    console.log("---------------------------------------------------------------");
+                    console.log("Como não há dados novos para captura, o gráfico não atualizará.");
+                    console.log("Horário do novo dado capturado:");
+                    console.log(novoRegistro[0].hora);
+                    console.log("Horário do último dado capturado:");
+                    console.log(dados.labels[dados.labels.length - 1]);
+                    console.log("---------------------------------------------------------------");
+                }
+
+                setTimeout(() => atualizarGraficoCPU(idATM, dados, myChart), 2000);
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados para o gráfico: ${error.message}`);
+                setTimeout(() => atualizarGraficoCPU(idATM, dados, myChart), 2000);
+            });
+    }
+
+
+</script>
