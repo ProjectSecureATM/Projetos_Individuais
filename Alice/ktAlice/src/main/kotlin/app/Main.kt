@@ -11,23 +11,10 @@ import java.util.*
 import java.io.PrintStream
 import java.io.FileOutputStream
 
-
-open class Main {
-    companion object {
-        @JvmStatic
-        fun main(args: Array<String>) {
-
+        fun main() {
             val repositorio = Repositorio()
             repositorio.iniciar()
 
-           // repositorio.criarTabela()
-
-            //val caminhoArquivoLog =
-            //"C:\\Users\\VkSenes\\OneDrive\\Documentos\\Alice_SPtech\\Semestre 2\\Sprint2 - P.I\\Projetos_Individuais\\Alice\\arquivo.log"
-            //val arquivoLog = FileOutputStream(caminhoArquivoLog, true)
-            //val printStream = PrintStream(arquivoLog)
-
-            //val consoleOriginal = System.out
 
             val banco = Banco()
             banco.nome = "Bradesco"
@@ -95,7 +82,7 @@ open class Main {
                 $contaAleatorio ao tentar realizar o login no ATM ${repositorio.idAtmAleatorio()}.
                 $mensagem
                 CPF do Usuário: $cpfAleatorio,
-                Cartão: ${cartaoAleatorio}, 
+                Cartão: ${cartaoAleatorio},
                 Agência: ${repositorio.idAgenciaAleatorio()}
             """.trimIndent()
 
@@ -123,8 +110,7 @@ open class Main {
                 Thread.sleep(5000)
             }
         }
-    }
-}
+
 
 
 
