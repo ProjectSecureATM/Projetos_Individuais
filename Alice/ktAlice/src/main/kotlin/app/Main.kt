@@ -47,14 +47,14 @@ import java.io.FileOutputStream
 
             //agora vamos gerar autenticações aleatórias com base nas contas instanciadas.
             var i = 0
+
+            val indice = Random.nextInt(0, banco.listaContas.size)
+            val indice2 = Random.nextInt(0, banco.listaContas.size)
+
+            var fk = repositorio.getUltimoIdLog()
+
+            val aleatorios = banco.listaContas[indice]
             while (true) {
-
-                val indice = Random.nextInt(0, banco.listaContas.size)
-                val indice2 = Random.nextInt(0, banco.listaContas.size)
-
-                var fk = repositorio.getUltimoIdLog()
-
-                val aleatorios = banco.listaContas[indice]
 
                 if (banco.listaContas.isNotEmpty()) {
                     val cpfAleatorio = aleatorios.cpf
@@ -98,6 +98,8 @@ import java.io.FileOutputStream
                     repositorio.insertMensagem(mensagem, fk)
                     repositorio.insertTipoErro(mensagemBanco, fk)
                     println("Isso será redirecionado para o arquivo de log.")
+
+
                 } else {
                     println("A lista de contas está vazia.")
                     //      System.out.flush()
@@ -108,8 +110,61 @@ import java.io.FileOutputStream
                 }
                 //i ++
                 Thread.sleep(5000)
+
+                if (banco.listaContas.isNotEmpty()) {
+                    val cpfAleatorio = aleatorios.cpf
+                    val contaAleatorio = aleatorios.numeroConta
+                    val cartaoAleatorio = aleatorios.numeroCartao
+                    val senhaNormal = aleatorios.senha
+
+                    val dataHora: LocalDateTime = LocalDateTime.now()
+
+                    val mensagemBanco: String = if (senhaNormal != senhaNormal) {
+                        "Usuário falhou na autenticação."
+                    } else {
+                        "Usuário autenticado com sucesso."
+                    }
+
+                    val mensagem: String = if (senhaNormal != senhaNormal) {
+                        "A senha ou cpf não correspondem ao banco de dados."
+                    } else {
+                        "A senha e cpf correspondem ao Banco de Dados."
+                    }
+
+                    val mensagemLog = """
+                $mensagemBanco
+                $contaAleatorio ao tentar realizar o login no ATM ${repositorio.idAtmAleatorio()}.
+                $mensagem
+                CPF do Usuário: $cpfAleatorio,
+                Cartão: ${cartaoAleatorio},
+                Agência: ${repositorio.idAgenciaAleatorio()}
+            """.trimIndent()
+
+                    LoggingKotlin.logInfo(mensagemLog)
+                    repositorio.insertLog(
+                        cartaoAleatorio,
+                        dataHora,
+                        contaAleatorio,
+                        repositorio.idAtmAleatorio(),
+                        repositorio.idAgenciaAleatorio(),
+                        1
+                    )
+                    repositorio.insertMensagem(mensagem, fk)
+                    repositorio.insertTipoErro(mensagemBanco, fk)
+                    println("Isso será redirecionado para o arquivo de log.")
+
+
+                } else {
+                    println("A lista de contas está vazia.")
+                    //      System.out.flush()
+                    //     System.setOut(consoleOriginal)
+                    //    println("Isso será redirecionado para o arquivo de log.")
+                    //   System.setOut(printStream)
+
+                }
             }
         }
+
 
 
 
