@@ -10,7 +10,7 @@ class USBMonitor:
             host='localhost',
             user='root',
             #password='sptech',
-            password='181004Mp.',
+            password='#Gf48556583830',
             database='SecureATM'
         )
         self.cursor = self.conn.cursor()

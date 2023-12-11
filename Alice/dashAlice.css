@@ -1,0 +1,296 @@
+#boxDashBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+}
+
+#dashBoard{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 100%;
+}
+
+
+#tituloDashBoard{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 15vh;
+
+}
+
+#titulo-DashBoard{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: auto;
+    width: 10%;
+}
+
+.logTempoRealTitulo{
+    color: #021e46;
+   font-weight: bold;
+    font-size: 20px; 
+}
+
+.logComparacaoSpan{
+    color: #021e46;
+    font-weight: bold;
+    font-size: 20px; 
+}
+
+.logKPIdiario{
+    color: #021e46;
+    font-weight: bold;
+    font-size: 20px; 
+}
+
+.logKPIhora{
+    color: #021e46;
+    font-weight: bold;
+    font-size: 20p
+}
+
+#graficoLogsTempoReal{
+    justify-content: end;
+}
+
+#titulo-center{
+    display: flex;
+    align-items: center;
+}
+
+#tituloDashboard{
+     width: 50%;
+     display: flex;
+     color: #5a5c69 !important;
+     margin-bottom: 0 !important;
+     font-size: 1.75rem;
+}
+
+#nomeDash{
+    width: 65%;
+    display: flex;
+    color: #5a5c69 !important;
+    margin-bottom: 0 !important;
+    font-size: 1.75rem;
+}
+
+#imgInformação {
+    height: 20px;
+    width: 20px;
+}
+
+#divButon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#butonDashBoard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3vh;
+    width: 7vw;
+    border-radius: 2rem;
+    background-color: #021e46;
+    
+}
+
+#butonDashBoard span{
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+#divLinhaDash{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+#boxDashComponente{
+    display: flex;
+    width: 95%;
+    height: 45%;
+}
+
+#divColunaDash{
+    display: flex;
+    flex-direction: column;
+    width:19.5vw;
+    height: 50vh;
+}
+
+#boxDashComponente{
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    width: 43vh;
+    border-left: 0.25rem solid #021e46 !important;
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+#boxDashKPI1{
+    display: flex;
+    justify-content: center;
+    height: 23vh;
+    width: 43vh;
+    border-left: 0.25rem solid #021e46 !important;
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+#componente{
+    height: 9vh;
+    width: 95%;
+}
+
+#componente span{
+    font-size: 26px;
+    color: black;
+    font-weight: bold;
+}
+
+#divLinhaDash2{
+    padding-top: 5vh;
+    justify-content: space-between;
+    padding-bottom: 21px;
+    flex-direction: row;
+    display: flex;
+}
+
+
+/* GRAFICO DE COMPARAÇÃO */
+#boxDashGraficoBarra{
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    width: 75vh;
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: #fff;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+#containerDashComponentes{
+    height: 90%;
+    width: 95%;
+}
+
+#divTitulo{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#tituloComparacao{
+    color:#021e46;
+    font-size: large;
+}
+
+#conteudoComponenteComparacao{
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 100%;
+}
+
+#componenteComparacao{
+    height: 50vh;
+    width: 90%
+}
+
+/* GRAFICO TEMPO REAL */
+#boxDashGrafico{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 90vh;
+    border-radius: 0.35rem;
+    border: 1px solid #e3e6f0;
+    background-color: #fff;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+#conteudoComponenteTempoReal{
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+}
+
+#componenteTempoReal{
+    height: 50vh;
+    width: 90%;
+}
+
+#tituloTempoReal{
+    color:#021e46;
+    font-size: large;
+}
+
+
+/* KPIs */
+#divLinhaDash{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+}
+
+#containerDashComponentesKPI{
+    height: auto;
+    width: 90%;
+}
+
+#divtitulo{
+    width: 20vh;
+    height: 10vh;
+}
+
+#titulo{
+    color:#021e46;
+    font-size: large;
+}
+
+#componenteDia{
+    height: 20vh;
+    width: 95%; 
+}
+
+#totalLogsDia{
+    display: flex;
+    height: 20vh;
+    width: 95%;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+#qtdLogsHora{
+    display: flex;
+    height: 20vh;
+    width: 95%;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+

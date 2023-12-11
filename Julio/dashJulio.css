@@ -1,0 +1,30 @@
+
+#tamDiv{
+    height: 11vh;
+}
+
+#dash{
+    width: 45vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    left: 4vw;
+}
+
+#conteudoIPs {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center;
+    align-items: center;
+}
+
+.item-rede {
+    flex: 0 0 calc(33.33% - 20px); /* Controla o dimensionamento para 3 itens por linha */
+    border-radius: 0.5rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px; /* Espaço entre os itens */
+    padding: 10px;
+    box-sizing: border-box; /* Garante que a largura inclua o preenchimento e a borda */
+}
