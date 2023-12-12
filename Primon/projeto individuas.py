@@ -3,6 +3,7 @@ import datetime
 import mysql.connector
 import pymssql
 import psutil
+import time
 
 class USBMonitor:
     def __init__(self):
@@ -10,12 +11,7 @@ class USBMonitor:
         self.conn = mysql.connector.connect(
             host='localhost',
             user='root',
-<<<<<<< HEAD:Primon/projeto individuas.py
-            #password='sptech',
-            password='#Gf48556583830',
-=======
-            password='Ph993387998',
->>>>>>> 08302d0887c22bc0a0a90a8fb86d4f37ee7488f9:Primon/projeto individuas1.py
+            password='root',
             database='SecureATM'
         )
         self.cursor = self.conn.cursor()
@@ -131,18 +127,18 @@ class USBMonitor:
         while True:
             print("===================")
             print("Escolha uma opção:")
-            print("1 - Atualizar Lista de Dispositivos")
-            print("2 - Mostrar Dispositivos")
-            print("3 - Sair")
+            print("1 - Iniciar captura de Dispositivos")
+            print("2 - Sair")
             escolha = input("Digite o número correspondente à opção desejada: ")
 
             if escolha == '1':
-                self.get_devices()
-                self.last_update_time = datetime.datetime.now()
-                print("Lista Atualizada!")
+                while True:
+                    self.get_devices()
+                    self.last_update_time = datetime.datetime.now()
+                    self.list_usb_devices()
+                    time.sleep(7)
+                    
             elif escolha == '2':
-                self.list_usb_devices()
-            elif escolha == '3':
                 print("Encerrando o monitor de dispositivos.")
                 break
             else:
